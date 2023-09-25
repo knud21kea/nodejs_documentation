@@ -5,6 +5,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(urlencoded({extended: true}));
 
+let loggedIn = false;
 
 const frontpage = templateEngine.readPage('./public/pages/frontpage/frontpage.html');
 const frontpagePage = templateEngine.renderPage(frontpage, {
@@ -111,8 +112,10 @@ app.get('/', ((req, res) => {
   });
 
   app.get('/login', ((req, res) => {
+    loggedIn = true;
     res.send(loginPage);
   }));
+
 
   const admin = templateEngine.readPage('./public/pages/admin/admin.html');
   const adminPage = templateEngine.renderPage(admin, {
@@ -120,8 +123,15 @@ app.get('/', ((req, res) => {
   });
 
   app.get('/admin', ((req, res) => {
-    res.send(adminPage);
+    if (!loggedIn) {
+      res.redirect('/login');
+    }
+    else {
+      res.send(adminPage);
+    }
   }));
+
+  
 
 
 
