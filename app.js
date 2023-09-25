@@ -3,137 +3,154 @@ import templateEngine from './utils/templateEngine.js';
 
 const app = express();
 app.use(express.static('public'));
-app.use(urlencoded({extended: true}));
+app.use(urlencoded({ extended: true }));
 
 let loggedIn = false;
 
+// Pages --------------------------------------------------------------------------
+
 const frontpage = templateEngine.readPage('./public/pages/frontpage/frontpage.html');
 const frontpagePage = templateEngine.renderPage(frontpage, {
-  tabTitle: 'Docs: Home'
+  tabTitle: 'NJS: Home'
 });
 
 app.get('/', ((req, res) => {
-    res.send(frontpagePage);
-  }));
+  res.send(frontpagePage);
+}));
 
-  const terminal = templateEngine.readPage('./public/pages/terminal/terminal.html');
-  const terminalPage = templateEngine.renderPage(terminal, {
-    tabTitle: 'NJS: Terminal'
-  });
+const terminal = templateEngine.readPage('./public/pages/terminal/terminal.html');
+const terminalPage = templateEngine.renderPage(terminal, {
+  tabTitle: 'NJS: Terminal'
+});
 
-  app.get('/terminal', ((req, res) => {
-    res.send(terminalPage);
-  }));
-  
-  const nodejs = templateEngine.readPage('./public/pages/nodejs/nodejs.html');
-  const nodejsPage = templateEngine.renderPage(nodejs, {
-    tabTitle: 'NJS: Variables'
-  });
+app.get('/terminal', ((req, res) => {
+  res.send(terminalPage);
+}));
 
-  app.get('/nodejs', ((req, res) => {
-    res.send(nodejsPage);
-  }));
-  
-  const variables = templateEngine.readPage('./public/pages/variables/variables.html');
-  const variablesPage = templateEngine.renderPage(variables, {
-    tabTitle: 'NJS: Variables'
-  });
+const nodejs = templateEngine.readPage('./public/pages/nodejs/nodejs.html');
+const nodejsPage = templateEngine.renderPage(nodejs, {
+  tabTitle: 'NJS: Variables'
+});
 
-  app.get('/variables', ((req, res) => {
-    res.send(variablesPage);
-  }));
+app.get('/nodejs', ((req, res) => {
+  res.send(nodejsPage);
+}));
 
-  const functions = templateEngine.readPage('./public/pages/functions/functions.html');
-  const functionsPage = templateEngine.renderPage(functions, {
-    tabTitle: 'NJS: Functions'
-  });
+const variables = templateEngine.readPage('./public/pages/variables/variables.html');
+const variablesPage = templateEngine.renderPage(variables, {
+  tabTitle: 'NJS: Variables'
+});
 
-  app.get('/functions', ((req, res) => {
-    res.send(functionsPage);
-  }));
+app.get('/variables', ((req, res) => {
+  res.send(variablesPage);
+}));
 
-  const loops = templateEngine.readPage('./public/pages/loops/loops.html');
-  const loopsPage = templateEngine.renderPage(loops, {
-    tabTitle: 'NJS: Loops'
-  });
+const functions = templateEngine.readPage('./public/pages/functions/functions.html');
+const functionsPage = templateEngine.renderPage(functions, {
+  tabTitle: 'NJS: Functions'
+});
 
-  app.get('/loops', ((req, res) => {
-    res.send(loopsPage);
-  }));
+app.get('/functions', ((req, res) => {
+  res.send(functionsPage);
+}));
 
-  const design = templateEngine.readPage('./public/pages/design/design.html');
-  const designPage = templateEngine.renderPage(design, {
-    tabTitle: 'NJS: Design'
-  });
+const loops = templateEngine.readPage('./public/pages/loops/loops.html');
+const loopsPage = templateEngine.renderPage(loops, {
+  tabTitle: 'NJS: Loops'
+});
 
-  app.get('/design', ((req, res) => {
-    res.send(designPage);
-  }));
+app.get('/loops', ((req, res) => {
+  res.send(loopsPage);
+}));
 
-  const modules = templateEngine.readPage('./public/pages/modules/modules.html');
-  const modulesPage = templateEngine.renderPage(modules, {
-    tabTitle: 'NJS: Modules'
-  });
+const design = templateEngine.readPage('./public/pages/design/design.html');
+const designPage = templateEngine.renderPage(design, {
+  tabTitle: 'NJS: Design'
+});
 
-  app.get('/modules', ((req, res) => {
-    res.send(modulesPage);
-  }));
+app.get('/design', ((req, res) => {
+  res.send(designPage);
+}));
 
-  const redirect = templateEngine.readPage('./public/pages/redirect/redirect.html');
-  const redirectPage = templateEngine.renderPage(redirect, {
-    tabTitle: 'NJS: Redirect'
-  });
+const modules = templateEngine.readPage('./public/pages/modules/modules.html');
+const modulesPage = templateEngine.renderPage(modules, {
+  tabTitle: 'NJS: Modules'
+});
 
-  app.get('/redirect', ((req, res) => {
-    res.send(redirectPage);
-  }));
+app.get('/modules', ((req, res) => {
+  res.send(modulesPage);
+}));
 
-  const restapi = templateEngine.readPage('./public/pages/restapi/restapi.html');
-  const restapiPage = templateEngine.renderPage(restapi, {
-    tabTitle: 'NJS: REST'
-  });
+const redirect = templateEngine.readPage('./public/pages/redirect/redirect.html');
+const redirectPage = templateEngine.renderPage(redirect, {
+  tabTitle: 'NJS: Redirect'
+});
 
-  app.get('/restapi', ((req, res) => {
-    res.send(restapiPage);
-  }));
+app.get('/redirect', ((req, res) => {
+  res.send(redirectPage);
+}));
 
-  const template = templateEngine.readPage('./public/pages/template/template.html');
-  const templatePage = templateEngine.renderPage(template, {
-    tabTitle: 'NJS: Template'
-  });
+const restapi = templateEngine.readPage('./public/pages/restapi/restapi.html');
+const restapiPage = templateEngine.renderPage(restapi, {
+  tabTitle: 'NJS: REST'
+});
 
-  app.get('/template', ((req, res) => {
-    res.send(templatePage);
-  }));
+app.get('/restapi', ((req, res) => {
+  res.send(restapiPage);
+}));
 
-  const login = templateEngine.readPage('./public/pages/login/login.html');
-  const loginPage = templateEngine.renderPage(login, {
-    tabTitle: 'NJS: Login'
-  });
+const template = templateEngine.readPage('./public/pages/template/template.html');
+const templatePage = templateEngine.renderPage(template, {
+  tabTitle: 'NJS: Template'
+});
 
-  app.get('/login', ((req, res) => {
+app.get('/template', ((req, res) => {
+  res.send(templatePage);
+}));
+
+const login = templateEngine.readPage('./public/pages/login/login.html');
+const loginPage = templateEngine.renderPage(login, {
+  tabTitle: 'NJS: Login'
+});
+
+app.get('/login', ((req, res) => {
+  res.send(loginPage);
+}));
+
+const admin = templateEngine.readPage('./public/pages/admin/admin.html');
+const adminPage = templateEngine.renderPage(admin, {
+  tabTitle: 'NJS: Admin'
+});
+
+app.get('/admin', ((req, res) => {
+  if (!loggedIn) {
+    res.redirect('/login');
+  }
+  else {
+    res.send(adminPage);
+  }
+}));
+
+// API ---------------------------------------------------------------------------
+
+const user = {
+  username: "admin",
+  password: "11111"
+}
+
+app.post('/api/login', ((req, res) => {
+  const loginName = req.body.username;
+  const loginPassword = req.body.password;
+  if (loginName == user.username && loginPassword == user.password) {
     loggedIn = true;
-    res.send(loginPage);
-  }));
+    res.redirect('/admin');
+  } else {
+    loggedIn = false;
+    res.redirect('/login');
+  }
+}));
 
-
-  const admin = templateEngine.readPage('./public/pages/admin/admin.html');
-  const adminPage = templateEngine.renderPage(admin, {
-    tabTitle: 'NJS: Admin'
-  });
-
-  app.get('/admin', ((req, res) => {
-    if (!loggedIn) {
-      res.redirect('/login');
-    }
-    else {
-      res.send(adminPage);
-    }
-  }));
-
-  
-
-
+// Server --------------------------------------------------------------------
 
 const PORT = 8080;
 app.listen(PORT, (error) => {

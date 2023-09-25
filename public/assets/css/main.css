@@ -14,10 +14,11 @@ main {
 }
 
 nav {
-    background-color: rgb(60, 49, 80);
-    border-radius: 1em;
-    margin-bottom: 5vh;
-    min-height: 10vh;
+    /* background-color: rgb(60, 49, 80); */
+    background-image: linear-gradient(rgba(60,49,80,0), rgba(60,49,80,1), rgba(60,49,80,0));
+    border-radius: 2em;
+    margin-bottom: 2vh;
+    min-height: 15vh;
     display: flex;
     flex-direction: row;
     justify-content:space-around;
@@ -31,7 +32,8 @@ a {
 
 footer {
     color: blanchedalmond;
-    background-color: rgb(60, 49, 80);
+    /* background-color: rgb(60, 49, 80); */
+    background-image: repeating-linear-gradient(to right, rgba(60,49,80,0), rgba(60,49,80,1), rgba(60,49,80,0));
     font-size: small;
     border-radius: 1em;
     display: flex;
@@ -74,4 +76,17 @@ pre code {
 .icon {
     max-width: 4vw;
     height: auto;
+    border-radius: 1em;
+}
+
+input {
+    background-color: antiquewhite;
+    border-radius: 0.5em;
+    font-size: large;
+}
+
+button {
+    background-color: antiquewhite;
+    border-radius: 0.5em;
+    font-size: large;
 }
