@@ -15,22 +15,22 @@ app.get('/', ((req, res) => {
     res.send(frontpagePage);
   }));
 
-  const one = templateEngine.readPage('./public/pages/1/1.html');
-  const onePage = templateEngine.renderPage(one, {
-    tabTitle: 'Docs: P1'
+  const terminal = templateEngine.readPage('./public/pages/terminal/terminal.html');
+  const terminalPage = templateEngine.renderPage(terminal, {
+    tabTitle: 'NJS: Terminal'
   });
 
-  app.get('/1', ((req, res) => {
-    res.send(onePage);
+  app.get('/terminal', ((req, res) => {
+    res.send(terminalPage);
   }));
   
-  const two = templateEngine.readPage('./public/pages/2/2.html');
-  const twoPage = templateEngine.renderPage(two, {
-    tabTitle: 'Docs: P2'
+  const variables = templateEngine.readPage('./public/pages/variables/variables.html');
+  const variablesPage = templateEngine.renderPage(variables, {
+    tabTitle: 'NJS: Variables'
   });
 
-  app.get('/2', ((req, res) => {
-    res.send(twoPage);
+  app.get('/variables', ((req, res) => {
+    res.send(variablesPage);
   }));
 
   const three = templateEngine.readPage('./public/pages/3/3.html');

@@ -1,0 +1,78 @@
+<h2>Terminal operations</h2>
+
+<div class="introText">
+    <h3>
+        Originally computers only accepted inputs from and printed outputs to a terminal.
+    </h3>
+    <p>
+        &emsp;We still use a Command Line Interface (CLI) both as input to and output from console applications
+        and to configure or control other software. We can also navigate our folder structure and
+        perform maintanence on the operating system. The commands are entered after a command prompt,
+        usually a character like '>'.<br>
+        &emsp;This works as a Read - Evaluate - Print - Loop (REPL), effectively a console window where
+        a single expression is inputed and a result returned.<br>
+        &emsp;Pressing tab in the terminal helps with auto completion of commands and avoids errors.
+    </p>
+</div>
+
+<div class="subText">
+    <br>
+    <h4>Some common commands:</h4>
+    <p>
+        These are used to manage files and navigate folder structures or to get system information.
+        Other useful commands are open, cp, mv, touch, mkdir, rmdir, sudo, top, q, clear, ditto, exit.
+    </p>
+    <p>
+    <pre>
+        <code>
+        >cd "path"                  | change directory
+        >cd ..                      | change directory up one level
+        >pwd                        | print path of working directory    
+        >ls "path"                  | list directory (ls -l for details)
+        </code>
+    </pre>
+    </p>
+</div>
+
+<div class="subText">
+    <br>
+    <h4>
+        Working with git:
+    </h4>
+    <p>
+        We can also get access to source and version control features directly from the terminal.
+    </p>
+    <p>
+    <pre>
+        <code>
+	    >git add -A                 | adds all files even those outside the current directory
+	    >git commit -m "message"    | stash all changes on current branch
+	    >git push                   | commits from local to remote repo
+	    >git clone                  | copy a repo to a new directory
+        </code>
+    </pre>
+    </p>
+</div>
+
+<div class="subText">
+    <br>
+    <h4>
+        Controlling node:
+    </h4>
+    <p>
+        We use the terminal to run node programs too. NPM is a package manager for node modules,
+        and Nodemon is a command-line tool that helps to optimise development of Node.js applications.
+        It monitors the project directory and automatically restarts the application when it detects any changes.
+    </p>
+    <p>
+    <pre>
+        <code>
+	    >npm i                      | cleans up and installs dependencies. The same as npm install
+	    >node filename              | run a node application
+	    >nodemon filename           | run a node application with Nodemon
+	    >Ctrl+C                     | twice to exit
+	    >Ctrl+D                     | hard exit	    
+        </code>
+    </pre>
+    </p>
+</div>

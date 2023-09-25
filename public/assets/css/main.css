@@ -44,6 +44,19 @@ h2 {
     text-decoration: underline;
 }
 
+h3 {
+    font-style: italic;
+}
+
+.introText {
+    font-size: large;   
+}
+
+.subText h4 {
+    color:lightblue;
+    font-size: larger;
+}
+
 pre code {
     background-color: rgb(41, 42, 48);
     color: papayawhip;
@@ -55,5 +68,10 @@ pre code {
 
 #nodejs-logo {
     max-width: 50vw;
+    height: auto;
+}
+
+.icon {
+    max-width: 4vw;
     height: auto;
 }
