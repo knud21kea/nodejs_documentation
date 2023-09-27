@@ -11,7 +11,7 @@ let loggedIn = false;
 
 const frontpage = templateEngine.readPage('./public/pages/frontpage/frontpage.html');
 const frontpagePage = templateEngine.renderPage(frontpage, {
-  tabTitle: 'NJS: Home'
+  tabTitle: 'NJS: Home',
 });
 
 app.get('/', ((req, res) => {
@@ -20,7 +20,7 @@ app.get('/', ((req, res) => {
 
 const terminal = templateEngine.readPage('./public/pages/terminal/terminal.html');
 const terminalPage = templateEngine.renderPage(terminal, {
-  tabTitle: 'NJS: Terminal'
+  tabTitle: 'NJS: Terminal',
 });
 
 app.get('/terminal', ((req, res) => {
@@ -29,7 +29,7 @@ app.get('/terminal', ((req, res) => {
 
 const nodejs = templateEngine.readPage('./public/pages/nodejs/nodejs.html');
 const nodejsPage = templateEngine.renderPage(nodejs, {
-  tabTitle: 'NJS: Variables'
+  tabTitle: 'NJS: Variables',
 });
 
 app.get('/nodejs', ((req, res) => {
@@ -38,7 +38,7 @@ app.get('/nodejs', ((req, res) => {
 
 const variables = templateEngine.readPage('./public/pages/variables/variables.html');
 const variablesPage = templateEngine.renderPage(variables, {
-  tabTitle: 'NJS: Variables'
+  tabTitle: 'NJS: Variables',
 });
 
 app.get('/variables', ((req, res) => {
@@ -47,7 +47,7 @@ app.get('/variables', ((req, res) => {
 
 const functions = templateEngine.readPage('./public/pages/functions/functions.html');
 const functionsPage = templateEngine.renderPage(functions, {
-  tabTitle: 'NJS: Functions'
+  tabTitle: 'NJS: Functions',
 });
 
 app.get('/functions', ((req, res) => {
@@ -56,7 +56,7 @@ app.get('/functions', ((req, res) => {
 
 const loops = templateEngine.readPage('./public/pages/loops/loops.html');
 const loopsPage = templateEngine.renderPage(loops, {
-  tabTitle: 'NJS: Loops'
+  tabTitle: 'NJS: Loops',
 });
 
 app.get('/loops', ((req, res) => {
@@ -65,7 +65,7 @@ app.get('/loops', ((req, res) => {
 
 const design = templateEngine.readPage('./public/pages/design/design.html');
 const designPage = templateEngine.renderPage(design, {
-  tabTitle: 'NJS: Design'
+  tabTitle: 'NJS: Design',
 });
 
 app.get('/design', ((req, res) => {
@@ -74,7 +74,7 @@ app.get('/design', ((req, res) => {
 
 const modules = templateEngine.readPage('./public/pages/modules/modules.html');
 const modulesPage = templateEngine.renderPage(modules, {
-  tabTitle: 'NJS: Modules'
+  tabTitle: 'NJS: Modules',
 });
 
 app.get('/modules', ((req, res) => {
@@ -83,7 +83,7 @@ app.get('/modules', ((req, res) => {
 
 const redirect = templateEngine.readPage('./public/pages/redirect/redirect.html');
 const redirectPage = templateEngine.renderPage(redirect, {
-  tabTitle: 'NJS: Redirect'
+  tabTitle: 'NJS: Redirect',
 });
 
 app.get('/redirect', ((req, res) => {
@@ -92,7 +92,7 @@ app.get('/redirect', ((req, res) => {
 
 const restapi = templateEngine.readPage('./public/pages/restapi/restapi.html');
 const restapiPage = templateEngine.renderPage(restapi, {
-  tabTitle: 'NJS: REST'
+  tabTitle: 'NJS: REST',
 });
 
 app.get('/restapi', ((req, res) => {
@@ -101,7 +101,7 @@ app.get('/restapi', ((req, res) => {
 
 const template = templateEngine.readPage('./public/pages/template/template.html');
 const templatePage = templateEngine.renderPage(template, {
-  tabTitle: 'NJS: Template'
+  tabTitle: 'NJS: Template',
 });
 
 app.get('/template', ((req, res) => {
@@ -110,7 +110,7 @@ app.get('/template', ((req, res) => {
 
 const xss = templateEngine.readPage('./public/pages/xss/xss.html');
 const xssPage = templateEngine.renderPage(xss, {
-  tabTitle: 'NJS: XSS'
+  tabTitle: 'NJS: XSS',
 });
 
 app.get('/xss', ((req, res) => {
@@ -119,7 +119,7 @@ app.get('/xss', ((req, res) => {
 
 const bluesky = templateEngine.readPage('./public/pages/bluesky/bluesky.html');
 const blueskyPage = templateEngine.renderPage(bluesky, {
-  tabTitle: 'NJS: Blue sky'
+  tabTitle: 'NJS: Blue sky',
 });
 
 app.get('/bluesky', ((req, res) => {
@@ -128,7 +128,7 @@ app.get('/bluesky', ((req, res) => {
 
 const login = templateEngine.readPage('./public/pages/login/login.html');
 const loginPage = templateEngine.renderPage(login, {
-  tabTitle: 'NJS: Login'
+  tabTitle: 'NJS: Login',
 });
 
 app.get('/login', ((req, res) => {
@@ -137,14 +137,13 @@ app.get('/login', ((req, res) => {
 
 const admin = templateEngine.readPage('./public/pages/admin/admin.html');
 const adminPage = templateEngine.renderPage(admin, {
-  tabTitle: 'NJS: Admin'
+  tabTitle: 'NJS: Admin',
 });
 
 app.get('/admin', ((req, res) => {
   if (!loggedIn) {
     res.redirect('/login');
-  }
-  else {
+  } else {
     res.send(adminPage);
   }
 }));
@@ -152,14 +151,14 @@ app.get('/admin', ((req, res) => {
 // API ---------------------------------------------------------------------------
 
 const user = {
-  username: "admin",
-  password: "11111"
-}
+  username: 'admin',
+  password: '11111',
+};
 
 app.post('/api/login', ((req, res) => {
   const loginName = req.body.username;
   const loginPassword = req.body.password;
-  if (loginName == user.username && loginPassword == user.password) {
+  if (loginName === user.username && loginPassword === user.password) {
     loggedIn = true;
     res.redirect('/admin');
   } else {

@@ -12,20 +12,52 @@
 <div class="subText">
     <br>
     <h4>
-        Rendering
+        Rendering client side
     </h4>
     <p>
-        information
+        Client side rendering (CSR) is ideal for dynamic websites. It may be that the first page is slow to load
+        but then the browser can update content very quickly, maybe using linked JavaScript files, without
+        having to wait for a series of requests to processed and returned by the server. This has the advantage
+        of making it easier to provide a high UX, but a disadvantage that the site may not perform well with
+        SEO (Search Engine Optimisation) because the web crawlers cannot read all the relevant content.
+        An endpoint in our Express server fight look like this:
     </p>
     <p>
     <pre>
             <code>
-                code snippet
+            app.get("/", (req, res) => {
+                res.sendFile(__dirname + "/public/frontpage.html")
+            });
             </code>
         </pre>
     </p>
+</div>
+
+<div class="subText">
+    <br>
+    <h4>
+        Rendering server side
+    </h4>
     <p>
-        other information
+        Server side rendering (SSR) is good for static websites. After receiving a request for a page, the server
+        accesses all data required, renders the page to match the request, and returns a complete HTML file.
+        The browser only needs to execute the HTML, which is fast, and the site scores well in SEO as all data
+        is available. But if the page needs updating, for example after user input, then the process is slow
+        and server load high. An endpoint in our Express server fight look like this:
+    </p>
+    <p>
+    <pre>
+            <code>
+            const frontpage = templateEngine.readPage('./public/pages/frontpage/frontpage.html');
+            const frontpagePage = templateEngine.renderPage(frontpage, {
+            tabTitle: 'NJS: Home'
+            });
+
+            app.get('/', ((req, res) => {
+                res.send(frontpagePage);
+            }));
+            </code>
+        </pre>
     </p>
 </div>
 
