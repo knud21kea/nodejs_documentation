@@ -1,0 +1,57 @@
+<h2>XSS</h2>
+
+<div class="introText">
+    <h3>
+        Bonus documentation covering basics of XSS
+    </h3>
+    <p>
+        Cross site scripting: What is is, how it works, how to combat it.
+    </p>
+</div>
+
+<div class="subText">
+    <br>
+    <h4>
+        What is it:
+    </h4>
+    <p>
+        XSS attacks are conducted by attackers who use vulnerable web applications to inject malicious code.
+    </p>
+</div>
+
+<div class="subText">
+    <br>
+    <h4>
+        How does it work?
+    </h4>
+    <p>
+	The malicious code executes in the browser, the attacker steals cookies from account users
+    and gains access to sensitive and confidential information in the application.
+    </p>
+</div>
+
+<div class="subText">
+    <br>
+    <h4>
+        How to combat an XXS attack?
+    </h4>
+    <p>
+        There are basically two strategies, both of which need to be implemented.
+        <ul>
+            <li>
+                Input validation is performed to make sure only secure data enters an information system
+            </li>
+            <li>
+                Output encoding translates untrusted input into a safe model, which can be done by sanitizing HTML.
+                <ul>
+                    <li>
+                        Client-side sanitization: prevents unsafe content from the DOM level
+                    </li>
+                    <li>
+                        Server-side sanitization: prevents the storage of malicious HTML content in databases
+                    </li>
+                </ul>
+            </li>
+        </ul>
+	</p>
+</div>

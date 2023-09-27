@@ -1,18 +1,18 @@
-<h2>Rendering and ridirection</h2>
+<h2>Rendering and redirection</h2>
 
 <div class="introText">
     <h3>
-        Teaser text
+        Pros and cons of the different approaches.
     </h3>
     <p>
-        Intro text
+        Both rendering and redirection can be performed either client side or server side.
     </p>
 </div>
 
 <div class="subText">
     <br>
     <h4>
-        Sub heading:
+        Rendering
     </h4>
     <p>
         information
@@ -26,5 +26,59 @@
     </p>
     <p>
         other information
+    </p>
+</div>
+
+<div class="subText">
+    <br>
+    <h4>
+        Redirection
+    </h4>
+    <p>
+        Redirection is sending the browser to an alternative url. Here are four ways to do it:
+    </p>
+    <h5>
+        Client side
+    </h5>
+    <p>
+        <pre>
+            <code>
+            window.location.href = 'https://example.com/new-page';
+            </code>
+        </pre>
+    </p>
+    <h5>
+        Server side
+    </h5>
+    <p>
+        <pre>
+            <code>
+            // With Express
+            res.redirect(301, 'https://example.com/new-page');
+            </code>
+        </pre>
+    </p>
+    <h5>
+        Middleware
+    </h5>
+    <p>
+        <pre>
+            <code>
+            // With Express's own
+            app.use((req, res, next) => {
+                if (shouldRedirect(req)) {
+                    res.redirect(301, 'https://example.com/new-page');
+                } else {
+                    next();
+                }
+            });
+            </code>
+        </pre>
+    </p>
+    <h5>
+        Proxy
+    </h5>
+    <p>
+        Use a reverse proxy like Nginx or Apache to handle redirects before requests even reach your Node.js application.
     </p>
 </div>

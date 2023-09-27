@@ -108,6 +108,24 @@ app.get('/template', ((req, res) => {
   res.send(templatePage);
 }));
 
+const xss = templateEngine.readPage('./public/pages/xss/xss.html');
+const xssPage = templateEngine.renderPage(xss, {
+  tabTitle: 'NJS: XSS'
+});
+
+app.get('/xss', ((req, res) => {
+  res.send(xssPage);
+}));
+
+const bluesky = templateEngine.readPage('./public/pages/bluesky/bluesky.html');
+const blueskyPage = templateEngine.renderPage(bluesky, {
+  tabTitle: 'NJS: Blue sky'
+});
+
+app.get('/bluesky', ((req, res) => {
+  res.send(blueskyPage);
+}));
+
 const login = templateEngine.readPage('./public/pages/login/login.html');
 const loginPage = templateEngine.renderPage(login, {
   tabTitle: 'NJS: Login'
