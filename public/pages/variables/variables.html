@@ -8,9 +8,12 @@
 	</h3>
 	<p>
 		&emsp;We will look at data types and type coercion in JavaScript. 'var' can be used to specify the data type,
-		but we try to minimise its use as it has global scope which can be difficult to debug.<br>
+		but we try to minimise its use as it has global scope which can be difficult to debug due to hoisting.<br>
+		&emsp;Scope is an important concept. Opening a scope pushes a call execution stack and local variables
+		which are then popped outside the scope. Block scoping gives more granular control of scope than function scoping.<br>
 		&emsp;We use 'const' as much as possible, which does need to be assigned a value when declared
-		and otherwise 'let' for local variables with changing values.<br>
+		and otherwise 'let' for local variables with changing values. A const cannot be redeclared,
+		but an array can be changed, for example by pushing an element, and an object's properties can be changed.<br>
 	</p>
 </div>
 
@@ -34,17 +37,23 @@
 	</p>
 	<p>
 		Although they seem similar, undefined indicates the absence of a value, while null indicates the absence of an object .
-		JavaScript usually defaults to undefined when something is devoid of a value:
+		JavaScript usually defaults to undefined when something is devoid of a value. You can find type using typeof().
 	</p>
+	<pre>
+        <code>
+		const value = true;
+		console.log(typeof(value));
+        </code>
+    </pre>
 </div>
 
 <div class="subText">
 	<br>
 	<h4>
-		Dynamic and weak typing:
+		Dynamic types:
 	</h4>
 	<p>
-		JavaScript which is a dynamic language with dynamic types.
+		JavaScript is a dynamic language with dynamic types.
 		Variables in JavaScript are not directly associated with any particular value type
 		and any variable can be assigned (and re-assigned) values of all types.
 	</p>
@@ -55,9 +64,16 @@
 		myVariable = true; // myVariable is now a boolean
         </code>
     </pre>
+	</div>
+
+<div class="subText">
+	<br>
+	<h4>
+		Weak typing and type coercion:
+	</h4>
 	<p>
-		JavaScript is also a weakly typed language, which means it allows implicit type conversion
-		when an operation involves mismatched types, instead of throwing type errors.
+		It is also a weakly typed language. This means that you can often use a value of one type where another type is expected,
+		and the language will convert it to the right type for you, instead of throwing type errors. This is type coercion.
 	</p>
 	<pre>
         <code>
@@ -66,20 +82,15 @@
 		console.log(result); // "71"
         </code>
     </pre>
-</div>
-
-<div class="subText">
-	<br>
-	<h4>
-		Type coercion:
-	</h4>
 	<p>
-		JavaScript is a weakly typed language. This means that you can often use a value of one type where another type is expected,
-		and the language will convert it to the right type for you. To do so, JavaScript defines coercion rules.
+		When comparing data the == operator performs a loose check with type coercion, while === requires identical type.
+	</p>
+	<p>
+		JavaScript defines coercion rules:
 	<ul>
-		<li>Primitive coercion - where a primitive value is expected, but no strong preference for the actual type</li>
-		<li>Numeric coercion - bigint, number</li>
-		<li>Other coercions - string, boolean, object</li>
+		<li>Primitive coercion - where a primitive value is expected, but no strong preference for the actual type;</li>
+		<li>Numeric coercion - bigint, number;</li>
+		<li>Other coercions - string, boolean, object.</li>
 	</ul>
 	</p>
 	<p>
