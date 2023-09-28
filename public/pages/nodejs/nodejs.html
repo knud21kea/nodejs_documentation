@@ -7,12 +7,12 @@
         </p>
         <ul class="content">
             <li>
-            To set up Node for a JavaScript project using Express
-            <br><br>
+                To set up Node for a JavaScript project using Express
+                <br><br>
             </li>
             <li>
-            Creating a server instance
-            <br><br>
+                Creating a server instance
+                <br><br>
             </li>
         </ul>
     </div>
@@ -41,23 +41,19 @@
                 Create a package.json file with a key "dependencies" taking a value object with key "express" and value
                 "version"
             </p>
-            <pre>
-        <code>
-        {
-            "dependencies": {
-                "express": "4.18.2"
-            }
-        }
-        </code>
-    </pre>
+            <pre><code>
+{
+    "dependencies": {
+    "express": "4.18.2"
+    }
+}
+</code></pre>
             <p>
                 We can then use Node's package manager to install the dependencies.
             </p>
-            <pre>
-            <code>
-            >npm i
-            </code>
-        </pre>
+            <pre><code>
+>npm i
+</code></pre>
             <p>
                 This creates and poulates a node_modules folder and a package-lock.json file in the project. This file
                 ensures that the same dependencies, with the same versions, are installed consistently across different
@@ -77,17 +73,15 @@
                 Express, initialise it and set a port address for the server to listen on.
                 8080 is conventionally the development port for http.
             </p>
-            <pre>
-            <code>
-            const express = require("express");
-            const app = express();
-             ...   
-            app.listen(8080, (error) => {
-                if (error) {
-                    return;
-            }});
-            </code>
-        </pre>
+            <pre><code>
+const express = require("express");
+const app = express();
+ ...   
+app.listen(8080, (error) => {
+    if (error) {
+        return;
+}});
+</code></pre>
             <p>
                 There are no routes here but the server is running.
                 For more information on alternative import methods see the 'modules' page.

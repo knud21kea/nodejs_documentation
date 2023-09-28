@@ -74,14 +74,25 @@ h3 {
     color:lightblue;
 }
 
-pre code {
+pre {
+    
+    white-space: pre;
+    display: inline-block;
     background-color: rgb(41, 42, 48);
     color: papayawhip;
     font-family: monospace;
-    display: inline-block;
-    padding-right: 8vw;
+    padding: 1vw;
     border-radius: 1em;
-}
+  }
+  
+  code {
+    padding: 1vw;
+    text-align: left;
+  }
+
+  .snippet {
+    text-align: left;
+  }
 
 #nodejs-logo {
     max-width: 40vw;
@@ -95,7 +106,7 @@ pre code {
 }
 
 .index {
-    max-width: 15vw;
+    max-width: 12vw;
     height: auto;
     border-radius: 1em;
 }
@@ -114,4 +125,10 @@ button {
     background-color: antiquewhite;
     border-radius: 0.5em;
     font-size: large;
+}
+
+.pageNavigation {
+    font-size: medium;
+    color:cadetblue;
+    text-align: end;
 }
