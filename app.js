@@ -81,15 +81,6 @@ app.get('/modules', ((req, res) => {
   res.send(modulesPage);
 }));
 
-const redirect = templateEngine.readPage('./public/pages/redirect/redirect.html');
-const redirectPage = templateEngine.renderPage(redirect, {
-  tabTitle: 'NJS: Redirect',
-});
-
-app.get('/redirect', ((req, res) => {
-  res.send(redirectPage);
-}));
-
 const restapi = templateEngine.readPage('./public/pages/restapi/restapi.html');
 const restapiPage = templateEngine.renderPage(restapi, {
   tabTitle: 'NJS: REST',
@@ -106,6 +97,15 @@ const websitePage = templateEngine.renderPage(website, {
 
 app.get('/website', ((req, res) => {
   res.send(websitePage);
+}));
+
+const redirect = templateEngine.readPage('./public/pages/redirect/redirect.html');
+const redirectPage = templateEngine.renderPage(redirect, {
+  tabTitle: 'NJS: Redirect',
+});
+
+app.get('/redirect', ((req, res) => {
+  res.send(redirectPage);
 }));
 
 const xss = templateEngine.readPage('./public/pages/xss/xss.html');
