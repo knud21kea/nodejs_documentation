@@ -1,26 +1,47 @@
-<h2>How we have used Node.js (which we will also refer to as just Node)</h2>
+<div class="row">
 
-<div class="introText">
-    <h3>
-        Node is neither a framework nor a programming language.
-    </h3>
-    <p>
-        It is a runtime environment for executing JavaScript code outside a browser. We have used it together
-        with Express, which is an OpenJS Foundation project providing a Web Application Framework for Node.
-    </p>
-</div>
+    <div class="columnLeft">
+        <img src="/assets/images/nodejs_icon.png" class="index">
+        <p>
+            Content
+        </p>
+        <ul class="content">
+            <li>
+            To set up Node for a JavaScript project using Express
+            <br><br>
+            </li>
+            <li>
+            Creating a server instance
+            <br><br>
+            </li>
+        </ul>
+    </div>
 
-<div class="subText">
-    <br>
-    <h4>
-        To set up Node for a JavaScript project using Express:
-    </h4>
-    <p>
-        Install Node. Navigate to the root directory of the project (see the page on terminal operations).
-        Create a package.json file with a key "dependencies" taking a value object with key "express" and value
-        "version"
-    </p>
-    <pre>
+    <div class="columnRight">
+
+        <h2>How we have used Node.js (which we will also refer to as just Node)</h2>
+
+        <div class="introText">
+            <h3>
+                Node is neither a framework nor a programming language.
+            </h3>
+            <p>
+                It is a runtime environment for executing JavaScript code outside a browser. We have used it together
+                with Express, which is an OpenJS Foundation project providing a Web Application Framework for Node.
+            </p>
+        </div>
+
+        <div class="subText">
+            <br>
+            <h4>
+                To set up Node for a JavaScript project using Express:
+            </h4>
+            <p>
+                Install Node. Navigate to the root directory of the project (see the page on terminal operations).
+                Create a package.json file with a key "dependencies" taking a value object with key "express" and value
+                "version"
+            </p>
+            <pre>
         <code>
         {
             "dependencies": {
@@ -29,33 +50,34 @@
         }
         </code>
     </pre>
-    <p>
-        We can then use Node's package manager to install the dependencies.
-    </p>
-    <pre>
+            <p>
+                We can then use Node's package manager to install the dependencies.
+            </p>
+            <pre>
             <code>
             >npm i
             </code>
         </pre>
-    <p>
-        This creates and poulates a node_modules folder and a package-lock.json file in the project. This file
-        ensures that the same dependencies, with the same versions, are installed consistently across different
-        environments.
-    </p>
-</div>
+            <p>
+                This creates and poulates a node_modules folder and a package-lock.json file in the project. This file
+                ensures that the same dependencies, with the same versions, are installed consistently across different
+                environments.
+            </p>
+        </div>
 
-<div class="subText">
-    <br>
-    <h4>
-        Creating a server instance:
-    </h4>
-    <p>
-        We are using Express to help build our web application, and that framework expects the entry point
-        to be app.js, so we create that file in the root of our project. To get the server running we need to import
-        Express, initialise it and set a port address for the server to listen on.
-        8080 is conventionally the development port for http.
-    </p>
-    <pre>
+        <div class="subText">
+            <br>
+            <h4>
+                Creating a server instance:
+            </h4>
+            <p>
+                We are using Express to help build our web application, and that framework expects the entry point
+                to be app.js, so we create that file in the root of our project. To get the server running we need to
+                import
+                Express, initialise it and set a port address for the server to listen on.
+                8080 is conventionally the development port for http.
+            </p>
+            <pre>
             <code>
             const express = require("express");
             const app = express();
@@ -66,9 +88,11 @@
             }});
             </code>
         </pre>
-    <p>
-        There are no routes here but the server is running.
-        For more information on alternative import methods see the 'modules' page.
-        And for more on program design and structure see 'design'.
-    </p>
+            <p>
+                There are no routes here but the server is running.
+                For more information on alternative import methods see the 'modules' page.
+                And for more on program design and structure see 'design'.
+            </p>
+        </div>
+    </div>
 </div>

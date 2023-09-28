@@ -1,16 +1,32 @@
+.row {
+    display: flex;
+  }
+  
+.columnLeft {
+    flex: 20%;
+    padding: 1vw;
+    background-color: rgb(15, 15, 15);
+  }
+
+  .columnRight {
+    flex: 80%;
+    padding: 1vw;
+  }
+
 body {
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(0, 0, 0);
+}
+
+main {
+    flex: 1;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    background-color: rgb(30, 30, 30);
     color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 95vh;
     display: flex;
     flex-direction: column;
-}
-
-main {
-    flex: 1;
-    margin-left: 10vw;
-    margin-right: 10vw;
 }
 
 nav {
@@ -77,6 +93,16 @@ pre code {
     height: auto;
     border-radius: 1em;
 }
+
+.index {
+    max-width: 15vw;
+    height: auto;
+    border-radius: 1em;
+}
+
+.content {
+    padding-left: 1vw;
+ }
 
 input {
     background-color: antiquewhite;
