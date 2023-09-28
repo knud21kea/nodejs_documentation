@@ -105,6 +105,10 @@ pre {
     border-radius: 1em;
 }
 
+.icon:hover {
+    max-width: 6vw;
+}
+
 .index {
     max-width: 12vw;
     height: auto;
