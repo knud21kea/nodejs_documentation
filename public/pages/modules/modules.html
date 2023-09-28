@@ -7,19 +7,11 @@
         </p>
         <ul class="content">
             <li>
-                <a href="#modules-section-1" class="pageSection">m1</a>
+                <a href="#modules-section-1" class="pageSection">Require versus import</a>
                 <br><br>
             </li>
             <li>
-                <a href="#modules-section-2" class="pageSection">m2</a>
-                <br><br>
-            </li>
-            <li>
-                <a href="#modules-section-3" class="pageSection">m3</a>
-                <br><br>
-            </li>
-            <li>
-                <a href="#modules-section-4" class="pageSection">m4</a>
+                <a href="#modules-section-2" class="pageSection">Custom modules</a>
                 <br><br>
             </li>
         </ul>
@@ -31,27 +23,108 @@
 
         <div class="introText">
             <h3>
-                Import versus Require
+                Everything in Node is a module
             </h3>
             <p>
-                Intro text
+                &emsp;Modules in Node are like libraries in JavaScript, so they are packages. All files are considered
+                to be modules. We have two methods of importing.
             </p>
         </div>
 
         <div class="subText" id="modules-section-1">
             <br>
             <h4>
-                Sub heading:
+                Require versus import:
             </h4>
             <p>
-                information
+                We can import express using CommonJS module system that is the default in Node.
             </p>
             <pre><code>
-code snippet
+const express = require("express");
+const app = express();
             </code></pre>
             <p>
-                other information
+                Or we import with the newer ECMAScript modules like browsers do, enabling ES6 module syntax.
+                Here we also use destructuring syntax to extract the ability to decode url from express().
             </p>
+            <pre><code>
+import express, { urlencoded } from 'express';
+const app = express();
+</code></pre>
+            <p>
+                To use the ECMAScript we need to add type="module" to our package.json like this, where we can also see
+                an example of semantic versioning major.minor.patch (here the trivial version 1.0.0).
+            </p>
+            <pre><code>
+{
+    "dependencies": {
+        "express": "4.18.2"
+    },
+    "name": "s4_node_docs",
+    "description": "KEA node.Js mandatory 1",
+    "version": "1.0.0",
+    "main": "app.js",
+    "type": "module",
+     ..
+}
+</code></pre>
+            <p>
+                This more modern way not only enables ES6, but provides a method to mitigate circular dependencies, by
+                allowing the moving of shared code in two libraries into a third library that is then shared by the others.
+            </p>
+        </div>
+        <div class="pageNavigation">
+            <a href="#modules-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
+
+        <div class="subText" id="modules-section-2">
+            <br>
+            <h4>
+                Custom modules:
+            </h4>
+            <p>
+                We can also create our own modules and use them in our application, for example with this simple
+                template engine which adds a navbar and sticky footer to the static pages we serve in the assignment.
+            </p>
+            <pre><code>
+import fs from 'fs';
+
+function readPage(pagePath) {
+    return fs.readFileSync(pagePath.toString());
+}
+                
+function renderPage(page, config = {}) {
+    const navbar = fs.readFileSync('./public/components/navbar/navbar.html').toString()
+    .replace('$TITLE', config.tabTitle || 'Documentaion');
+                
+    const footer = fs.readFileSync('./public/components/footer/footer.html').toString()
+    .replace('$FOOTER_TEXT', `Coding by Niki ©${new Date().getFullYear()}`);
+                
+    return navbar + page + footer;
+}
+                
+export default {
+    renderPage,
+    readPage,
+};
+</code></pre>
+            <p>
+                The two functions renderPage() and readPage() are exported so they can be imported in app.js, where it can be noted,
+                that renderPage() includes an example of how to get a Date object in JavaScript, and to call one of its methods.
+            </p>
+            <pre><code>
+import templateEngine from './utils/templateEngine.js';
+</code></pre>
+            <p>
+                These functions can then be called in the code responsible for handling requests on each endpoint,
+                for example in the code used to render and serve this very page!
+            </p>
+            <pre><code>
+const modules = templateEngine.readPage('./public/pages/modules/modules.html');
+const modulesPage = templateEngine.renderPage(modules, {
+    tabTitle: 'NJS: Modules',
+});
+</code></pre>
         </div>
         <div class="pageNavigation">
             <a href="#modules-section-0" class="pageNavigation">Return to top of page</a>

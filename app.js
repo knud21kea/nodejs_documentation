@@ -99,13 +99,13 @@ app.get('/restapi', ((req, res) => {
   res.send(restapiPage);
 }));
 
-const template = templateEngine.readPage('./public/pages/template/template.html');
-const templatePage = templateEngine.renderPage(template, {
-  tabTitle: 'NJS: Template',
+const html = templateEngine.readPage('./public/pages/html/html.html');
+const htmlPage = templateEngine.renderPage(html, {
+  tabTitle: 'NJS: HTML',
 });
 
-app.get('/template', ((req, res) => {
-  res.send(templatePage);
+app.get('/html', ((req, res) => {
+  res.send(htmlPage);
 }));
 
 const xss = templateEngine.readPage('./public/pages/xss/xss.html');
