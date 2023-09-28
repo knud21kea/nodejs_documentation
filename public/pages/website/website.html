@@ -1,0 +1,127 @@
+<div class="row" id="website-section-0">
+
+    <div class="columnLeft">
+        <img src="/assets/images/website_icon.png" class="index">
+        <p>
+            Contents:
+        </p>
+        <ul class="content">
+            <li>
+                <a href="#website-section-1" class="pageSection">Why serve static files?</a>
+                <br><br>
+            </li>
+            <li>
+                <a href="#website-section-2" class="pageSection">Serving the files</a>
+                <br><br>
+            </li>
+            <li>
+                <a href="#website-section-3" class="pageSection">Connecting static content</a>
+                <br><br>
+            </li>
+        </ul>
+    </div>
+
+    <div class="columnRight">
+
+        <h2>Website</h2>
+
+        <div class="introText">
+            <h3>
+                Serving HTML
+            </h3>
+            <p>
+                &emsp;In addition to handling API requests, our Express server can serve html pages. This very website
+                consists of static html pages served by Node using Express, where the pages are rendered server side.
+            </p>
+        </div>
+
+        <div class="subText" id="website-section-1">
+            <br>
+            <h4>
+                Why serve static files?
+            </h4>
+            <p>
+                Static files are ones that do not change while the application is running. Web applications used to be
+                generally static, but modern ones are mostly dynamic, where a browser can and does modify the html based
+                on external input, for example from a user, or by fetching from an API.<br><br>
+                We need to serve the files for security reasons. In general a client should not have access to a server.
+                This application uses middleware included in Express to restrict access to files in one folder.
+            </p>
+            <pre><code>
+app.use(express.static('public'));
+            </code></pre>
+            <p>
+                This means that the browser has access to any files (eg JavaScript, CSS, media etc) that are in the
+                ./public folder
+                or any of its subfolders, but not any outside that tree, which reduces the application's attack
+                surface.<br><br>
+                Middleware functions are functions that have access to the request and response objects and can perform
+                tasks
+                such as modifying the request or response, authenticating users, logging, etc.
+                The use() method adds the middleware function to the request handling pipeline.
+            </p>
+        </div>
+        <div class="pageNavigation">
+            <a href="#website-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
+
+        <div class="subText" id="website-section-2">
+            <br>
+            <h4>
+                Serving the files:
+            </h4>
+            <p>
+                To display a page via this application, a browser sends a request for a file via a GET mapping
+                on an endpoint. For this page it would be on http://'domain'/website. The endpoint has handling code.
+            </p>
+            <pre><code>
+const website = templateEngine.readPage('./public/pages/website/website.html');
+const websitePage = templateEngine.renderPage(website, {
+    tabTitle: 'NJS: Website',
+});
+                
+app.get('/website', ((req, res) => {
+    res.send(websitePage);
+}));
+</code></pre>
+            <p>
+                'templateEngine' is a custom module (see the 'modules' page) which takes the body data from website.html
+                appends it to the navbar fragment, appends the footer fragment and sends it as response. The browser can
+                then run the html and display the page using the linked CSS. There is some more information on rendering
+                in the 'redirect' page.
+            </p>
+        </div>
+        <div class="pageNavigation">
+            <a href="#website-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
+
+        <div class="subText" id="website-section-3">
+            <br>
+            <h4>
+                Connecting static content:
+            </h4>
+            <p>
+                There are two common techniques to integrate content within a webpage. To navigate between resources
+                we can use hyperlinking with clickable anchors.
+            </p>
+            <pre><code>
+&#60;a href="/modules"a&#60;&#62;/a&#62;
+</code></pre>
+            <p>
+                An to import another resorce we can use embedding, for example to load an image.
+            </p>
+            <pre><code>
+&#60;img src="/assets/images/modules_icon.png" class="icon"&#62;
+</code></pre>
+            <p>
+                We actually combine these on our navbar to make a request for another page by clicking an image.
+            </p>
+            <pre><code>
+&#60;a title="modules" href="/modules"&#60;&#62;img src="/assets/images/modules_icon.png" class="icon"&#60;&#62;/a&#62;
+</code></pre>
+        </div>
+        <div class="pageNavigation">
+            <a href="#website-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
+    </div>
+</div>

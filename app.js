@@ -29,7 +29,7 @@ app.get('/terminal', ((req, res) => {
 
 const nodejs = templateEngine.readPage('./public/pages/nodejs/nodejs.html');
 const nodejsPage = templateEngine.renderPage(nodejs, {
-  tabTitle: 'NJS: Variables',
+  tabTitle: 'NJS: Nodejs',
 });
 
 app.get('/nodejs', ((req, res) => {
@@ -99,13 +99,13 @@ app.get('/restapi', ((req, res) => {
   res.send(restapiPage);
 }));
 
-const html = templateEngine.readPage('./public/pages/html/html.html');
-const htmlPage = templateEngine.renderPage(html, {
-  tabTitle: 'NJS: HTML',
+const website = templateEngine.readPage('./public/pages/website/website.html');
+const websitePage = templateEngine.renderPage(website, {
+  tabTitle: 'NJS: Website',
 });
 
-app.get('/html', ((req, res) => {
-  res.send(htmlPage);
+app.get('/website', ((req, res) => {
+  res.send(websitePage);
 }));
 
 const xss = templateEngine.readPage('./public/pages/xss/xss.html');
