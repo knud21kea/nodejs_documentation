@@ -1,163 +1,200 @@
-<h2>REST API</h2>
+<div class="row" id="restapi-section-0">
 
-<div class="introText">
-    <h3>
-        Creating a full CRUDable REST API that follows conventions
-    </h3>
-    <p>
-        REST (REpresentational State Transfer) is a set of architectural constraints, not a protocol or a standard.
-        API developers can implement REST in a variety of ways. In our implementation the request and response where in the HTTP:JSON format.
-    </p>
-</div>
-
-<div class="subText">
-    <br>
-    <h4>
-        JSON and JavaScript:
-    </h4>
-    <p>
-        Despite the name, JSON (JavaScript Object Notation) is language independant and not the same as a JavaScript Object.
-        JavaScript Objects are simple key-value pairs with no quotes unless there are spaces in the key name,
-        but JSON needs quotes to be valid. We can convert between the two.
-    </p>
-    <p>
-        <pre>
-                <code>
-                JSON.parse(); //Turns a JSON string into an JavaScript object
-                JSON.stringify(); //Turns a JavaScript object into JSON string/data
-                </code>
-            </pre>
+    <div class="columnLeft">
+        <img src="/assets/images/api_icon.png" class="index">
+        <p>
+            Contents:
         </p>
+        <ul class="content">
+            <li>
+                <a href="#restapi-section-1" class="pageSection">JSON and JavaScript</a>
+                <br><br>
+            </li>
+            <li>
+                <a href="#restapi-section-2" class="pageSection">What makes an API Restful?</a>
+                <br><br>
+            </li>
+            <li>
+                <a href="#restapi-section-3" class="pageSection">Conventions</a>
+                <br><br>
+            </li>
+            <li>
+                <a href="#restapi-section-4" class="pageSection">Building the APIs endpoints with Express</a>
+                <br><br>
+            </li>
+        </ul>
     </div>
 
-<div class="subText">
-    <br>
-    <h4>
-        What makes an API Restful?:
-    </h4>
-    <p>
-        In order for an API to be considered RESTful, it has to conform to these criteria:
+    <div class="columnRight">
 
-        <ul>
-            <li>
-                A client-server architecture made up of clients, servers, and resources, with requests managed through HTTP.
-            </li>
-            <li>                
-                Stateless client-server communication, meaning no client information is stored between get requests and each request is separate and unconnected.
-            </li>
-            <li>                
-                Cacheable data that streamlines client-server interactions.
-            </li>
-            <li>                
-                A uniform interface between components so that information is transferred in a standard form.
-                This requires that:
-            </li>
+        <h2>REST API</h2>
+
+        <div class="introText">
+            <h3>
+                Creating a full CRUDable REST API that follows conventions
+            </h3>
+            <p>
+                REST (REpresentational State Transfer) is a set of architectural constraints, not a protocol or a
+                standard.
+                API developers can implement REST in a variety of ways. In our implementation the request and response
+                were in the HTTP:JSON format.
+            </p>
+        </div>
+
+        <div class="subText" id="restapi-section-1">
+            <br>
+            <h4>
+                JSON and JavaScript:
+            </h4>
+            <p>
+                Despite the name, JSON (JavaScript Object Notation) is language independant and not the same as a
+                JavaScript Object.
+                JavaScript Objects are simple key-value pairs with no quotes unless there are spaces in the key name,
+                but JSON needs quotes to be valid. We can convert between the two.
+            </p>
+            <pre><code>
+JSON.parse(); //Turns a JSON string into an JavaScript object
+JSON.stringify(); //Turns a JavaScript object into JSON string/data
+</code></pre>
+        </div>
+        <div class="pageNavigation">
+            <a href="#restapi-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
+
+        <div class="subText" id="restapi-section-2">
+            <br>
+            <h4>
+                What makes an API Restful?:
+            </h4>
+            <p>
+                In order for an API to be considered RESTful, it has to conform to these criteria:
+
+            <ul>
+                <li>
+                    A client-server architecture made up of clients, servers, and resources, with requests managed
+                    through HTTP.
+                </li>
+                <li>
+                    Stateless client-server communication, meaning no client information is stored between get requests
+                    and each request is separate and unconnected.
+                </li>
+                <li>
+                    Cacheable data that streamlines client-server interactions.
+                </li>
+                <li>
+                    A uniform interface between components so that information is transferred in a standard form.
+                    This requires that:
+                </li>
                 <ul>
                     <li>
                         resources requested are identifiable and separate from the representations sent to the client.
                     </li>
                     <li>
-                        resources can be manipulated by the client via the representation they receive because the representation
+                        resources can be manipulated by the client via the representation they receive because the
+                        representation
                         contains enough information to do so.
                     </li>
                     <li>
-                        self-descriptive messages returned to the client have enough information to describe how the client should process it.
+                        self-descriptive messages returned to the client have enough information to describe how the
+                        client should process it.
                     </li>
                     <li>
-                        hypertext/hypermedia is available, meaning that after accessing a resource the client should be able to use hyperlinks
+                        hypertext/hypermedia is available, meaning that after accessing a resource the client should be
+                        able to use hyperlinks
                         to find all other currently available actions they can take.
                     </li>
                 </ul>
-            <li>                
-                A layered system that organizes each type of server (those responsible for security, load-balancing, etc.)
-                involved in the retrieval of requested information into hierarchies, invisible to the client.
-            </li>
-            <li>                
-                And optionally Code-on-demand: the ability to send executable code from the server to the client when requested,
-                extending client functionality. 
-            </li>
-        </ul>
-    </p>
-</div>
+                <li>
+                    A layered system that organizes each type of server (those responsible for security, load-balancing,
+                    etc.)
+                    involved in the retrieval of requested information into hierarchies, invisible to the client.
+                </li>
+                <li>
+                    And optionally Code-on-demand: the ability to send executable code from the server to the client
+                    when requested,
+                    extending client functionality.
+                </li>
+            </ul>
+            </p>
+        </div>
+        <div class="pageNavigation">
+            <a href="#restapi-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
 
-<div class="subText">
-    <br>
-    <h4>
-        Conventions:
-    </h4>
-    <p>
-        We have followed two conventions when designing our API:
-        <ul>
-            <li>
-                order the endpoints based on HTTP methods,
-                Get, Post, Put(a new resource), Patch(replace parts of a resource), Delete.
-            </li>
-            <li>
-                Name the endpoins with plurals which map to a collection in the domain.
-            </li>
-        </ul>
-    </p>
-    <p>
-        For example with the mountains API:
-    </p>
-    <p>
-    <pre>
-            <code>
-            HTTP Method     Endpoint
-            GET             /mountains
-            GET             /mountains/:id
-            POST            /mountains
-            PUT             /mountains/:id
-            PATCH           /mountains/:id
-            PUT             /mountains/:id
-            DELETE          /mountains/:id
-            </code>
-        </pre>
-    </p>
-</div>
+        <div class="subText" id="restapi-section-3">
+            <br>
+            <h4>
+                Conventions:
+            </h4>
+            <p>
+                We have followed two conventions when designing our API:
+            <ul>
+                <li>
+                    Order the endpoints based on HTTP methods,
+                    Get, Post, Put(a new resource), Patch(replace parts of a resource), Delete.
+                </li>
+                <li>
+                    Name the endpoins with plurals which map to a collection in the domain.
+                </li>
+            </ul>
+            </p>
+            <p>
+                For example with the mountains API:
+            </p>
+            <pre><code>
+HTTP Method     Endpoint
+GET             /mountains
+GET             /mountains/:id
+POST            /mountains
+PUT             /mountains/:id
+PATCH           /mountains/:id
+PUT             /mountains/:id
+DELETE          /mountains/:id
+</code></pre>
+        </div>
+        <div class="pageNavigation">
+            <a href="#restapi-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
 
-<div class="subText">
-    <br>
-    <h4>
-        Building the APIs endpoints with Express:
-    </h4>
-    <p>
-        Using the Express server we created (see 'nodejs' page) we add routes handling CRUD requests.
-        We can make good use of callback functions in the code responsible for handling the requests.
-    </p>
-    <p>
-        For example with a request to get all mountains:
-    </p>
-    <p>
-    <pre>
-            <code>
-            app.get("/mountains", (req, res) => {
-                res.send({ data: mountains });
-            });
-            </code>
-        </pre>
-    </p>
-    <p>
-        And for a request to update the mountain with id passed as path parameter:
-    </p>
-    <p>
-    <pre>
-            <code>
-            app.use(express.json()); // needed for Express to handle JSON in req.body
-            .
-            app.patch("/mountains/:id", (req, res) => {
-                let foundIndex = mountains.findIndex((mountain) => mountain.id === Number(req.params.id));
-                if (foundIndex === -1) {
-                    res.status(404).send({ error: `Could not find mountain by id ${req.params.id}` });
-                } else {
-                    mountains[foundIndex] = { ...mountains[foundIndex], ...req.body, id: Number(req.params.id) };
-                    res.send({ data: mountains[foundIndex] });
-                }
-            });
-            </code>
-        </pre>
-    </p>
-    <p>
-        For more info on the advantages of findIndex() and ... (spread) see the 'loops' page.
-    </p>
+        <div class="subText" id="restapi-section-4">
+            <br>
+            <h4>
+                Building the APIs endpoints with Express:
+            </h4>
+            <p>
+                Using the Express server we created (see 'nodejs' page) we add routes handling CRUD requests.
+                We can make good use of callback functions in the code responsible for handling the requests.
+            </p>
+            <p>
+                For example with a request to get all mountains:
+            </p>
+            <pre><code>
+app.get("/mountains", (req, res) => {
+    res.send({ data: mountains });
+});
+</code></pre>
+            <p>
+                And for a request to update the mountain with id passed as path parameter:
+            </p>
+            <pre><code>
+app.use(express.json()); // needed for Express to handle JSON in req.body
+..
+app.patch("/mountains/:id", (req, res) => {
+    let foundIndex = mountains.findIndex((mountain) => mountain.id === Number(req.params.id));
+    if (foundIndex === -1) {
+        res.status(404).send({ error: `Could not find mountain by id ${req.params.id}` });
+    } else {
+        mountains[foundIndex] = { ...mountains[foundIndex], ...req.body, id: Number(req.params.id) };
+        res.send({ data: mountains[foundIndex] });
+    }
+});
+ </code></pre>
+            <p>
+                For more info on the advantages of findIndex() and ... (spread) see the 'loops' page.
+            </p>
+        </div>
+        <div class="pageNavigation">
+            <a href="#restapi-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
+    </div>
 </div>

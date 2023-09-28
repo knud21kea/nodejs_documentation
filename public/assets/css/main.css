@@ -133,6 +133,10 @@ button {
     text-align: end;
 }
 
+.pageSection {
+    color:lightblue;
+}
+
 .pageSection:hover {
     background-color: rgb(40, 40, 40);
 }

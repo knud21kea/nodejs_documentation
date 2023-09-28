@@ -1,57 +1,94 @@
-<h2>XSS</h2>
+<div class="row" id="xss-section-0">
 
-<div class="introText">
-    <h3>
-        Bonus documentation covering basics of XSS
-    </h3>
-    <p>
-        Cross site scripting: What is is, how it works, how to combat it.
-    </p>
-</div>
-
-<div class="subText">
-    <br>
-    <h4>
-        What is it:
-    </h4>
-    <p>
-        XSS attacks are conducted by attackers who use vulnerable web applications to inject malicious code.
-    </p>
-</div>
-
-<div class="subText">
-    <br>
-    <h4>
-        How does it work?
-    </h4>
-    <p>
-	The malicious code executes in the browser, the attacker steals cookies from account users
-    and gains access to sensitive and confidential information in the application.
-    </p>
-</div>
-
-<div class="subText">
-    <br>
-    <h4>
-        How to combat an XXS attack?
-    </h4>
-    <p>
-        There are basically two strategies, both of which need to be implemented.
-        <ul>
+    <div class="columnLeft">
+        <img src="/assets/images/xss_icon.png" class="index">
+        <p>
+            Contents:
+        </p>
+        <ul class="content">
             <li>
-                Input validation is performed to make sure only secure data enters an information system
+                <a href="#xss-section-1" class="pageSection">What is it?</a>
+                <br><br>
             </li>
             <li>
-                Output encoding translates untrusted input into a safe model, which can be done by sanitizing HTML.
-                <ul>
-                    <li>
-                        Client-side sanitization: prevents unsafe content from the DOM level
-                    </li>
-                    <li>
-                        Server-side sanitization: prevents the storage of malicious HTML content in databases
-                    </li>
-                </ul>
+                <a href="#xss-section-2" class="pageSection">How does it work?</a>
+                <br><br>
+            </li>
+            <li>
+                <a href="#xss-section-3" class="pageSection">How to combat an XXS attack?</a>
+                <br><br>
             </li>
         </ul>
-	</p>
+    </div>
+
+    <div class="columnRight">
+
+
+        <h2>XSS</h2>
+
+        <div class="introText">
+            <h3>
+                Bonus documentation covering basics of XSS
+            </h3>
+            <p>
+                Cross site scripting: What is is, how it works, how to combat it.
+            </p>
+        </div>
+
+        <div class="subText" id="xss-section-1">
+            <br>
+            <h4>
+                What is it?
+            </h4>
+            <p>
+                XSS attacks are conducted by attackers who use vulnerable web applications to inject malicious code.
+            </p>
+        </div>
+        <div class="pageNavigation">
+            <a href="#xss-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
+
+        <div class="subText" id="xss-section-2">
+            <br>
+            <h4>
+                How does it work?
+            </h4>
+            <p>
+                The malicious code executes in the browser, the attacker steals cookies from account users
+                and gains access to sensitive and confidential information in the application.
+            </p>
+        </div>
+        <div class="pageNavigation">
+            <a href="#xss-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
+
+        <div class="subText" id="xss-section-3">
+            <br>
+            <h4>
+                How to combat an XXS attack?
+            </h4>
+            <p>
+                There are basically two strategies, both of which need to be implemented.
+            <ul>
+                <li>
+                    Input validation is performed to make sure only secure data enters an information system
+                </li>
+                <li>
+                    Output encoding translates untrusted input into a safe model, which can be done by sanitizing HTML.
+                    <ul>
+                        <li>
+                            Client-side sanitization: prevents unsafe content from the DOM level
+                        </li>
+                        <li>
+                            Server-side sanitization: prevents the storage of malicious HTML content in databases
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            </p>
+        </div>
+        <div class="pageNavigation">
+            <a href="#xss-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
+    </div>
 </div>

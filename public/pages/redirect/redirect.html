@@ -1,116 +1,134 @@
-<h2>Rendering and redirection</h2>
+<div class="row" id="redirect-section-0">
 
-<div class="introText">
-    <h3>
-        Pros and cons of the different approaches.
-    </h3>
-    <p>
-        Both rendering and redirection can be performed either client side or server side.
-    </p>
-</div>
+    <div class="columnLeft">
+        <img src="/assets/images/redirect_icon.png" class="index">
+        <p>
+            Contents:
+        </p>
+        <ul class="content">
+            <li>
+                <a href="#redirect-section-1" class="pageSection">Rendering client side</a>
+                <br><br>
+            </li>
+            <li>
+                <a href="#redirect-section-2" class="pageSection">Rendering server side</a>
+                <br><br>
+            </li>
+            <li>
+                <a href="#redirect-section-3" class="pageSection">Redirection</a>
+                <br><br>
+            </li>
+        </ul>
+    </div>
 
-<div class="subText">
-    <br>
-    <h4>
-        Rendering client side
-    </h4>
-    <p>
-        Client side rendering (CSR) is ideal for dynamic websites. It may be that the first page is slow to load
-        but then the browser can update content very quickly, maybe using linked JavaScript files, without
-        having to wait for a series of requests to processed and returned by the server. This has the advantage
-        of making it easier to provide a high UX, but a disadvantage that the site may not perform well with
-        SEO (Search Engine Optimisation) because the web crawlers cannot read all the relevant content.
-        An endpoint in our Express server fight look like this:
-    </p>
-    <p>
-    <pre>
-            <code>
-            app.get("/", (req, res) => {
-                res.sendFile(__dirname + "/public/frontpage.html")
-            });
-            </code>
-        </pre>
-    </p>
-</div>
+    <div class="columnRight">
 
-<div class="subText">
-    <br>
-    <h4>
-        Rendering server side
-    </h4>
-    <p>
-        Server side rendering (SSR) is good for static websites. After receiving a request for a page, the server
-        accesses all data required, renders the page to match the request, and returns a complete HTML file.
-        The browser only needs to execute the HTML, which is fast, and the site scores well in SEO as all data
-        is available. But if the page needs updating, for example after user input, then the process is slow
-        and server load high. An endpoint in our Express server fight look like this:
-    </p>
-    <p>
-    <pre>
-            <code>
-            const frontpage = templateEngine.readPage('./public/pages/frontpage/frontpage.html');
-            const frontpagePage = templateEngine.renderPage(frontpage, {
-            tabTitle: 'NJS: Home'
-            });
+        <h2>Rendering and redirection</h2>
 
-            app.get('/', ((req, res) => {
-                res.send(frontpagePage);
-            }));
-            </code>
-        </pre>
-    </p>
-</div>
+        <div class="introText">
+            <h3>
+                Pros and cons of the different approaches.
+            </h3>
+            <p>
+                Both rendering and redirection can be performed either client side or server side.
+            </p>
+        </div>
 
-<div class="subText">
-    <br>
-    <h4>
-        Redirection
-    </h4>
-    <p>
-        Redirection is sending the browser to an alternative url. Here are four ways to do it:
-    </p>
-    <h5>
-        Client side
-    </h5>
-    <p>
-        <pre>
-            <code>
-            window.location.href = 'https://example.com/new-page';
-            </code>
-        </pre>
-    </p>
-    <h5>
-        Server side
-    </h5>
-    <p>
-        <pre>
-            <code>
-            // With Express
-            res.redirect(301, 'https://example.com/new-page');
-            </code>
-        </pre>
-    </p>
-    <h5>
-        Middleware
-    </h5>
-    <p>
-        <pre>
-            <code>
-            // With Express's own
-            app.use((req, res, next) => {
-                if (shouldRedirect(req)) {
-                    res.redirect(301, 'https://example.com/new-page');
-                } else {
-                    next();
-                }
-            });
-            </code>
-        </pre>
-    </p>
-    <h5>
-        Proxy
-    </h5>
-    <p>
-        Use a reverse proxy like Nginx or Apache to handle redirects before requests even reach your Node.js application.
-    </p>
+        <div class="subText" id="redirect-section-1">
+            <br>
+            <h4>
+                Rendering client side
+            </h4>
+            <p>
+                Client side rendering (CSR) is ideal for dynamic websites. It may be that the first page is slow to load
+                but then the browser can update content very quickly, maybe using linked JavaScript files, without
+                having to wait for a series of requests to processed and returned by the server. This has the advantage
+                of making it easier to provide a high UX, but a disadvantage that the site may not perform well with
+                SEO (Search Engine Optimisation) because the web crawlers cannot read all the relevant content.
+                An endpoint in our Express server fight look like this:
+            </p>
+            <pre><code>
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/public/frontpage.html")
+});
+</code></pre>
+        </div>
+        <div class="pageNavigation">
+            <a href="#redirect-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
+
+        <div class="subText" id="redirect-section-2">
+            <br>
+            <h4>
+                Rendering server side
+            </h4>
+            <p>
+                Server side rendering (SSR) is good for static websites. After receiving a request for a page, the
+                server
+                accesses all data required, renders the page to match the request, and returns a complete HTML file.
+                The browser only needs to execute the HTML, which is fast, and the site scores well in SEO as all data
+                is available. But if the page needs updating, for example after user input, then the process is slow
+                and server load high. An endpoint in our Express server fight look like this:
+            </p>
+            <pre><code>
+const frontpage = templateEngine.readPage('./public/pages/frontpage/frontpage.html');
+const frontpagePage = templateEngine.renderPage(frontpage, {
+tabTitle: 'NJS: Home'
+});
+
+app.get('/', ((req, res) => {
+    res.send(frontpagePage);
+}));
+</code></pre>
+        </div>
+        <div class="pageNavigation">
+            <a href="#redirect-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
+
+        <div class="subText" id="redirect-section-3">
+            <br>
+            <h4>
+                Redirection
+            </h4>
+            <p>
+                Redirection is sending the browser to an alternative url. Here are four ways to do it:
+            </p>
+            <h5>
+                Client side
+            </h5>
+            <pre><code>
+window.location.href = 'https://example.com/new-page';
+</code></pre>
+            <h5>
+                Server side
+            </h5>
+            <pre><code>
+// With Express
+res.redirect(301, 'https://example.com/new-page');
+</code></pre>
+            <h5>
+                Middleware
+            </h5>
+            <pre><code>
+// With Express's own
+app.use((req, res, next) => {
+    if (shouldRedirect(req)) {
+        res.redirect(301, 'https://example.com/new-page');
+    } else {
+         next();
+    }
+});
+ </code></pre>
+            <h5>
+                Proxy
+            </h5>
+            <p>
+                Use a reverse proxy like Nginx or Apache to handle redirects before requests even reach your Node.js
+                application.
+            </p>
+        </div>
+        <div class="pageNavigation">
+            <a href="#redirect-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
+    </div>
 </div>
