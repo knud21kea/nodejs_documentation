@@ -11,3 +11,4 @@ app.js is formated with Eslint using AirBnB style.
 - On each page it is possible to navigate to sections and back to start using the navigation side panel.
 - Clicking admin without being logged in redirects server side to login.
 - Succesful log in redirects server side to simple admin page.
+- Bonus topic is XSS, which is a learning goal but only mentioned in class.

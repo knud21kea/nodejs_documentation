@@ -132,3 +132,7 @@ button {
     color:cadetblue;
     text-align: end;
 }
+
+.pageSection:hover {
+    background-color: rgb(40, 40, 40);
+}

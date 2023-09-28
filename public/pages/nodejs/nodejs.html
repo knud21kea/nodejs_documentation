@@ -1,17 +1,17 @@
-<div class="row">
+<div class="row" id="node-section-0">
 
     <div class="columnLeft">
         <img src="/assets/images/nodejs_icon.png" class="index">
         <p>
-            Content
+            Contents:
         </p>
         <ul class="content">
             <li>
-                To set up Node for a JavaScript project using Express
+                <a href="#node-section-1" class="pageSection">To set up Node for a JavaScript project using Express</a>
                 <br><br>
             </li>
             <li>
-                Creating a server instance
+                <a href="#node-section-2" class="pageSection">Creating a server instance</a>
                 <br><br>
             </li>
         </ul>
@@ -31,7 +31,7 @@
             </p>
         </div>
 
-        <div class="subText">
+        <div class="subText" id="node-section-1">
             <br>
             <h4>
                 To set up Node for a JavaScript project using Express:
@@ -55,13 +55,16 @@
 >npm i
 </code></pre>
             <p>
-                This creates and poulates a node_modules folder and a package-lock.json file in the project. This file
-                ensures that the same dependencies, with the same versions, are installed consistently across different
-                environments.
+                This creates and poulates a node_modules folder in the project. This folder should not be push to Git.
+                A package-lock.json file is also created. This file ensures that the same dependencies,
+                with the same versions, are installed consistently across different environments.
             </p>
         </div>
+        <div class="pageNavigation">
+            <a href="#node-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
 
-        <div class="subText">
+        <div class="subText" id="node-section-2">
             <br>
             <h4>
                 Creating a server instance:
@@ -87,6 +90,9 @@ app.listen(8080, (error) => {
                 For more information on alternative import methods see the 'modules' page.
                 And for more on program design and structure see 'design'.
             </p>
+        </div>
+        <div class="pageNavigation">
+            <a href="#node-section-0" class="pageNavigation">Return to top of page</a>
         </div>
     </div>
 </div>

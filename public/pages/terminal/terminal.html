@@ -1,21 +1,21 @@
-<div class="row">
+<div class="row" id="terminal-section-0">
 
     <div class="columnLeft">
         <img src="/assets/images/terminal_icon.png" class="index">
         <p>
-            Content
+            Contents:
         </p>
         <ul class="content">
             <li>
-                Some common commands
+                <a href="#terminal-section-1" class="pageSection">Some common commands</a>
                 <br><br>
             </li>
             <li>
-                Working with git
+                <a href="#terminal-section-2" class="pageSection">Working with git</a>
                 <br><br>
             </li>
             <li>
-                Controlling node
+                <a href="#terminal-section-3" class="pageSection">Controlling node</a>
                 <br><br>
             </li>
         </ul>
@@ -40,7 +40,7 @@
             </p>
         </div>
 
-        <div class="subText">
+        <div class="subText" id="terminal-section-1">
             <br>
             <h4>
                 Some common commands:
@@ -52,12 +52,15 @@
             <pre><code>
 >cd "path"      | change directory
 >cd ..          | change directory up one level
->pwd            |print path of working directory    
+>pwd            | print path of working directory    
 >ls "path"      | list directory (ls -l for details)
 </code></pre>
         </div>
+        <div class="pageNavigation">
+            <a href="#terminal-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
 
-        <div class="subText">
+        <div class="subText" id="terminal-section-2">
             <br>
             <h4>
                 Working with git:
@@ -72,8 +75,11 @@
 >git clone "url"            | copy a repo to a new directory
 </code></pre>
         </div>
+        <div class="pageNavigation">
+            <a href="#terminal-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
 
-        <div class="subText">
+        <div class="subText" id="terminal-section-3">
             <br>
             <h4>
                 Controlling node:
@@ -82,7 +88,8 @@
                 We use the terminal to run node programs too. NPM is a package manager for node modules,
                 and Nodemon is a command-line tool that helps to optimise development of Node.js applications.
                 It monitors the project directory and automatically restarts the application when it detects any
-                changes.
+                changes. This can save time in development, but can have issues when a file shared by both client
+                and server is edited, where the browser reload can be too fast for the server restart, giving 404.
             </p>
             <pre><code>
 >npm install        | cleans up and installs dependencies
@@ -93,6 +100,8 @@
 >Ctrl+D             | hard exit	    
 </code></pre>
         </div>
-
+        <div class="pageNavigation">
+            <a href="#terminal-section-0" class="pageNavigation">Return to top of page</a>
+        </div>
     </div>
 </div>
