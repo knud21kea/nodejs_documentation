@@ -6,12 +6,19 @@
     flex: 20%;
     padding: 1vw;
     background-color: rgb(20, 20, 20);
+    background-image: linear-gradient(to right, rgb(15,15,15), rgb(25,25,25));
+  }
+
+  .columnLeft h3 {
+    color: burlywood;
+    text-decoration: underline;
   }
 
   .columnRight {
     flex: 80%;
     padding: 1vw;
-    background-color: rgb(30, 30, 30);
+    background-color: rgb(25, 25, 25);
+    background-image: linear-gradient(to right, rgb(25,25,25), rgb(15,15,15));
   }
 
   .columnRight.dark {
@@ -30,7 +37,7 @@ main {
     flex: 1;
     margin-left: 5vw;
     margin-right: 5vw;
-    background-color: rgb(30, 30, 30);
+    /* background-color: rgb(30, 30, 30); */
     color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 95vh;
