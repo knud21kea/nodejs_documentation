@@ -1,4 +1,4 @@
-<div class="row" id="modules-section-0">
+<div class="row" id="section-0">
 
     <div class="columnLeft">
         <img src="/assets/images/design_icon.png" class="index">
@@ -7,19 +7,19 @@
         </p>
         <ul class="content">
             <li>
-                <a href="#design-section-1" class="pageSection">d1</a>
+                <a href="#section-1" class="pageSection">Server structure</a>
                 <br><br>
             </li>
             <li>
-                <a href="#design-section-2" class="pageSection">d2</a>
+                <a href="#section-2" class="pageSection">Assets</a>
                 <br><br>
             </li>
             <li>
-                <a href="#design-section-3" class="pageSection">d3</a>
+                <a href="#section-3" class="pageSection">Components</a>
                 <br><br>
             </li>
             <li>
-                <a href="#design-section-4" class="pageSection">d4</a>
+                <a href="#section-4" class="pageSection">Clean code</a>
                 <br><br>
             </li>
         </ul>
@@ -34,17 +34,118 @@
                 Organising the structure of the code
             </h3>
             <p>
-                Import, pages, APIs, server
+                &emsp;The aim is to produce clean code which promotes readability, reusability, professionalism,
+                and error catching. To help with this we structure our code after accepted principles, and use tools
+                to improve our formatting.
             </p>
         </div>
 
-        <div class="subText" id="design-section-1">
+        <section class="subText" id="section-1">
             <br>
             <h4>
-                Sub heading:
+                Server structure:
             </h4>
             <p>
-                information
+                Place imports at the top of the file, then HTML pages, then APIs ordred by HTTP method (GET, POST, PUT,
+                PATCH, DELETE as described in the 'restapi' page) and finally the server code.
+            </p>
+            <pre><code>
+import express, { urlencoded } from 'express';
+import templateEngine from './utils/templateEngine.js';
+                
+const app = express();
+app.use(express.static('public'));
+app.use(urlencoded({ extended: true }));
+                
+// Pages --------------------------------------------------------------------------
+                
+app.get('/', ((req, res) => {
+    res.send(frontpagePage);
+}));
+                
+...
+                
+// API ---------------------------------------------------------------------------
+                
+app.get('/api/...
+app.post('/api/...
+app.put('/api/...
+app.patch('/api/...
+app.delete('/api/...
+                
+// Server --------------------------------------------------------------------
+                
+const PORT = 8080;
+app.listen(PORT, () => console.log("Server is running on port", PORT));
+</code></pre>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
+
+        <section class="subText" id="section-2">
+            <br>
+            <h4>
+                Assets:
+            </h4>
+            <p>
+                Create an 'assets' folder under 'public' to store static files like images, fonts, stylesheets,
+                and JavaScript files. This helps keep your project organized and makes it easier to locate and manage
+                assets.
+                Seperate types of assets should be in their own subfolders, which can also be subdivided after
+                functionality if required.
+            </p>
+            <pre><code>
+/public
+    /assets
+        /css
+        /images
+        /js
+</code></pre>
+            <p>
+                HTML files are grouped into a 'pages' directory. Each HTML file should represent a distinct page.
+                We have also provided subfolders for categories of views. Filenames should be lowercase and no spaces,
+                as different browsers/servers/languages handle them differently which can cause errors.
+            </p>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
+
+        <section class="subText" id="section-3">
+            <br>
+            <h4>
+                Components:
+            </h4>
+            <p>
+                Adopt a component-based approach where you break down your user interface into reusable HTML templates.
+                Each component should encapsulate a specific piece of functionality or content. We have footer and
+                navbar.
+            </p>
+            <pre><code>
+/components
+    /footer
+    /navbar
+</code></pre>
+            <p>
+                Compose complex pages by combining smaller components. This promotes code reuse and makes it easier
+                to manage complex layouts. We use a utility so combine navbar, page and footer.
+            </p>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
+
+        <section class="subText" id="section-4">
+            <br>
+            <h4>
+                Clean code:
+            </h4>
+            <p>
+                readability, reusability, professionalism, error catching - again be consistent
+                strict mode, vsc prettier, eslint air b'n'b style
+                filenames should be lowercase and no spaces, as different browsers/servers/languages handle them
+                differently
             </p>
             <pre><code>
 code snippet
@@ -52,9 +153,9 @@ code snippet
             <p>
                 other information
             </p>
-        </div>
-        <div class="pageNavigation">
-            <a href="#design-section-0" class="pageNavigation">Return to top of page</a>
-        </div>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
     </div>
 </div>

@@ -11,6 +11,15 @@
   .columnRight {
     flex: 80%;
     padding: 1vw;
+    background-color: rgb(30, 30, 30);
+  }
+
+  .columnRight.dark {
+    background-color: rgb(30, 30, 30);
+  }
+
+  .columnRight.light {
+    background-color: rgb(200, 200, 200);
   }
 
 body {
