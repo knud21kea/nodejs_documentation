@@ -36,6 +36,15 @@ app.get('/nodejs', ((req, res) => {
   res.send(nodejsPage);
 }));
 
+const modules = templateEngine.readPage('./public/pages/nodejs/modules.html');
+const modulesPage = templateEngine.renderPage(modules, {
+  tabTitle: 'NJS: Modules',
+});
+
+app.get('/modules', ((req, res) => {
+  res.send(modulesPage);
+}));
+
 const variables = templateEngine.readPage('./public/pages/javascript/variables.html');
 const variablesPage = templateEngine.renderPage(variables, {
   tabTitle: 'NJS: Variables',
@@ -63,24 +72,6 @@ app.get('/loops', ((req, res) => {
   res.send(loopsPage);
 }));
 
-const design = templateEngine.readPage('./public/pages/design/design.html');
-const designPage = templateEngine.renderPage(design, {
-  tabTitle: 'NJS: Design',
-});
-
-app.get('/design', ((req, res) => {
-  res.send(designPage);
-}));
-
-const modules = templateEngine.readPage('./public/pages/nodejs/modules.html');
-const modulesPage = templateEngine.renderPage(modules, {
-  tabTitle: 'NJS: Modules',
-});
-
-app.get('/modules', ((req, res) => {
-  res.send(modulesPage);
-}));
-
 const restapi = templateEngine.readPage('./public/pages/server/restapi.html');
 const restapiPage = templateEngine.renderPage(restapi, {
   tabTitle: 'NJS: REST',
@@ -106,6 +97,15 @@ const redirectPage = templateEngine.renderPage(redirect, {
 
 app.get('/redirect', ((req, res) => {
   res.send(redirectPage);
+}));
+
+const design = templateEngine.readPage('./public/pages/design/design.html');
+const designPage = templateEngine.renderPage(design, {
+  tabTitle: 'NJS: Design',
+});
+
+app.get('/design', ((req, res) => {
+  res.send(designPage);
 }));
 
 const xss = templateEngine.readPage('./public/pages/xss/xss.html');
