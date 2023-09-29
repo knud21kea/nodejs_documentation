@@ -6,10 +6,10 @@ function readPage(pagePath) {
 
 function renderPage(page, config = {}) {
   const navbar = fs.readFileSync('./public/components/navbar/navbar.html').toString()
-    .replace('$TITLE', config.tabTitle || 'Documentaion');
+    .replace('$TAB_NAME', config.tabTitle || 'Documentaion');
 
   const footer = fs.readFileSync('./public/components/footer/footer.html').toString()
-    .replace('$FOOTER_TEXT', `Coding by Niki ©${new Date().getFullYear()}`);
+    .replace('$FOOTER_YEAR', `${new Date().getFullYear()}`);
 
   return navbar + page + footer;
 }
