@@ -1,33 +1,34 @@
 .row {
     display: flex;
-  }
-  
-.columnLeft {
-    flex: 20%;
-    padding: 1vw;
-    background-color: rgb(20, 20, 20);
-    background-image: linear-gradient(to right, rgb(15,15,15), rgb(25,25,25));
-  }
+    min-height: 70vh;
+}
 
-  .columnLeft h3 {
+.columnLeft {
+    flex: 10%;
+    padding: 1vw;
+    background-color: rgb(22, 22, 22);
+    background-image: linear-gradient(to right, rgb(10, 10, 10), rgb(22, 22, 22));
+}
+
+.columnLeft h3 {
     color: burlywood;
     text-decoration: underline;
-  }
+}
 
-  .columnRight {
-    flex: 80%;
+.columnRight {
+    flex: 90%;
     padding: 1vw;
-    background-color: rgb(25, 25, 25);
-    background-image: linear-gradient(to right, rgb(25,25,25), rgb(15,15,15));
-  }
+    background-color: rgb(23, 23, 23);
+    background-image: linear-gradient(to right, rgb(23, 23, 23), rgb(10, 10, 10));
+}
 
-  .columnRight.dark {
+.columnRight.dark {
     background-color: rgb(30, 30, 30);
-  }
+}
 
-  .columnRight.light {
+.columnRight.light {
     background-color: rgb(200, 200, 200);
-  }
+}
 
 body {
     background-color: rgb(0, 0, 0);
@@ -40,20 +41,21 @@ main {
     /* background-color: rgb(30, 30, 30); */
     color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
-    min-height: 95vh;
+    font-size: 15px;
+    min-height: 72vh;
     display: flex;
     flex-direction: column;
 }
 
 nav {
     /* background-color: rgb(60, 49, 80); */
-    background-image: linear-gradient(rgba(60,49,80,0), rgba(60,49,80,1), rgba(60,49,80,0));
+    background-image: linear-gradient(rgba(40, 32, 54, 0), rgba(40, 32, 54, 1), rgba(40, 32, 54, 0));
     border-radius: 2em;
     margin-bottom: 2vh;
-    min-height: 15vh;
+    min-height: 13vh;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -65,12 +67,13 @@ a {
 footer {
     color: blanchedalmond;
     /* background-color: rgb(60, 49, 80); */
-    background-image: repeating-linear-gradient(to right, rgba(60,49,80,0), rgba(60,49,80,1), rgba(60,49,80,0));
+    background-image: repeating-linear-gradient(to right, rgba(40, 32, 54, 0), rgba(40, 32, 54, 1), rgba(40, 32, 54, 0));
     font-size: medium;
+    min-height: 10vh;
     border-radius: 1em;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-around;
 }
 
 h2 {
@@ -83,15 +86,16 @@ h3 {
 }
 
 .introText {
-    font-size: large;   
+    font-size: large;
 }
 
-.subText h4, h5 {
-    color:lightblue;
+.subText h4,
+h5 {
+    color: lightblue;
 }
 
 pre {
-    
+
     white-space: pre;
     display: inline-block;
     background-color: rgb(41, 42, 48);
@@ -99,16 +103,16 @@ pre {
     font-family: monospace;
     padding: 1vw;
     border-radius: 1em;
-  }
-  
-  code {
+}
+
+code {
     padding: 1vw;
     text-align: left;
-  }
+}
 
-  .snippet {
+.snippet {
     text-align: left;
-  }
+}
 
 #nodejs-logo {
     max-width: 40vw;
@@ -122,7 +126,7 @@ pre {
 }
 
 .icon:hover {
-    max-width: 6vw;
+    max-width: 5vw;
 }
 
 .index {
@@ -136,11 +140,11 @@ pre {
     width: 30vw;
     height: auto;
     border-radius: 5em;
-    opacity: 50%;
+    opacity: 75%;
 }
 
 .node {
-    vertical-align:middle;
+    vertical-align: middle;
     margin-bottom: 0.8vw;
     display: inline;
     width: auto;
@@ -148,7 +152,7 @@ pre {
 }
 
 .express {
-    vertical-align:middle;
+    vertical-align: middle;
     margin-bottom: 0.1vw;
     display: inline;
     width: auto;
@@ -157,7 +161,7 @@ pre {
 
 .content {
     padding-left: 1vw;
- }
+}
 
 input {
     background-color: antiquewhite;
@@ -173,12 +177,12 @@ button {
 
 .pageNavigation {
     font-size: medium;
-    color:cadetblue;
+    color: cadetblue;
     text-align: end;
 }
 
 .pageSection {
-    color:lightblue;
+    color: lightblue;
 }
 
 .pageSection:hover {
