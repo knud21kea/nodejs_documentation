@@ -1,4 +1,4 @@
-<div class="row" id="modules-section-0">
+<div class="row" id="section-0">
 
     <div class="columnLeft">
         <img src="/assets/images/modules_icon.png" class="index">
@@ -7,11 +7,11 @@
         </p>
         <ul class="content">
             <li>
-                <a href="#modules-section-1" class="pageSection">Require versus import</a>
+                <a href="#section-1" class="pageSection">Require versus import</a>
                 <br><br>
             </li>
             <li>
-                <a href="#modules-section-2" class="pageSection">Custom modules</a>
+                <a href="#section-2" class="pageSection">Custom modules</a>
                 <br><br>
             </li>
         </ul>
@@ -31,7 +31,7 @@
             </p>
         </div>
 
-        <div class="subText" id="modules-section-1">
+        <section class="subText" id="section-1">
             <br>
             <h4>
                 Require versus import:
@@ -70,14 +70,15 @@ const app = express();
 </code></pre>
             <p>
                 This more modern way not only enables ES6, but provides a method to mitigate circular dependencies, by
-                allowing the moving of shared code in two libraries into a third library that is then shared by the others.
+                allowing the moving of shared code in two libraries into a third library that is then shared by the
+                others.
             </p>
-        </div>
-        <div class="pageNavigation">
-            <a href="#modules-section-0" class="pageNavigation">Return to top of page</a>
-        </div>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
 
-        <div class="subText" id="modules-section-2">
+        <section class="subText" id="section-2">
             <br>
             <h4>
                 Custom modules:
@@ -109,8 +110,10 @@ export default {
 };
 </code></pre>
             <p>
-                The two functions renderPage() and readPage() are exported so they can be imported in app.js, where it can be noted,
-                that renderPage() includes an example of how to get a Date object in JavaScript, and to call one of its methods.
+                The two functions renderPage() and readPage() are exported so they can be imported in app.js, where it
+                can be noted,
+                that renderPage() includes an example of how to get a Date object in JavaScript, and to call one of its
+                methods.
             </p>
             <pre><code>
 import templateEngine from './utils/templateEngine.js';
@@ -125,9 +128,9 @@ const modulesPage = templateEngine.renderPage(modules, {
     tabTitle: 'NJS: Modules',
 });
 </code></pre>
-        </div>
-        <div class="pageNavigation">
-            <a href="#modules-section-0" class="pageNavigation">Return to top of page</a>
-        </div>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
     </div>
 </div>

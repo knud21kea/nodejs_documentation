@@ -1,4 +1,4 @@
-<div class="row" id="website-section-0">
+<div class="row" id="section-0">
 
     <div class="columnLeft">
         <img src="/assets/images/website_icon.png" class="index">
@@ -7,15 +7,15 @@
         </p>
         <ul class="content">
             <li>
-                <a href="#website-section-1" class="pageSection">Why serve static files?</a>
+                <a href="#section-1" class="pageSection">Why serve static files?</a>
                 <br><br>
             </li>
             <li>
-                <a href="#website-section-2" class="pageSection">Serving the files</a>
+                <a href="#section-2" class="pageSection">Serving the files</a>
                 <br><br>
             </li>
             <li>
-                <a href="#website-section-3" class="pageSection">Connecting static content</a>
+                <a href="#section-3" class="pageSection">Connecting static content</a>
                 <br><br>
             </li>
         </ul>
@@ -35,7 +35,7 @@
             </p>
         </div>
 
-        <div class="subText" id="website-section-1">
+        <section class="subText" id="section-1">
             <br>
             <h4>
                 Why serve static files?
@@ -60,12 +60,12 @@ app.use(express.static('public'));
                 such as modifying the request or response, authenticating users, logging, etc.
                 The use() method adds the middleware function to the request handling pipeline.
             </p>
-        </div>
         <div class="pageNavigation">
-            <a href="#website-section-0" class="pageNavigation">Return to top of page</a>
+            <a href="#section-0" class="pageNavigation">Return to top of page</a>
         </div>
+        </section>
 
-        <div class="subText" id="website-section-2">
+        <section class="subText" id="section-2">
             <br>
             <h4>
                 Serving the files:
@@ -90,12 +90,12 @@ app.get('/website', ((req, res) => {
                 then run the html and display the page using the linked CSS. There is some more information on rendering
                 in the 'redirect' page.
             </p>
-        </div>
         <div class="pageNavigation">
-            <a href="#website-section-0" class="pageNavigation">Return to top of page</a>
+            <a href="#section-0" class="pageNavigation">Return to top of page</a>
         </div>
+        </section>
 
-        <div class="subText" id="website-section-3">
+        <section class="subText" id="section-3">
             <br>
             <h4>
                 Connecting static content:
@@ -119,9 +119,9 @@ app.get('/website', ((req, res) => {
             <pre><code>
 &#60;a title="modules" href="/modules"&#62;&#60;img src="/assets/images/modules_icon.png" class="icon"&#62;&#60;/a&#62;
 </code></pre>
-        </div>
         <div class="pageNavigation">
-            <a href="#website-section-0" class="pageNavigation">Return to top of page</a>
+            <a href="#section-0" class="pageNavigation">Return to top of page</a>
         </div>
+        </section>
     </div>
 </div>

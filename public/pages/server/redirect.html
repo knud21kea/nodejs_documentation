@@ -1,4 +1,4 @@
-<div class="row" id="redirect-section-0">
+<div class="row" id="section-0">
 
     <div class="columnLeft">
         <img src="/assets/images/redirect_icon.png" class="index">
@@ -7,15 +7,15 @@
         </p>
         <ul class="content">
             <li>
-                <a href="#redirect-section-1" class="pageSection">Rendering client side</a>
+                <a href="#section-1" class="pageSection">Rendering client side</a>
                 <br><br>
             </li>
             <li>
-                <a href="#redirect-section-2" class="pageSection">Rendering server side</a>
+                <a href="#section-2" class="pageSection">Rendering server side</a>
                 <br><br>
             </li>
             <li>
-                <a href="#redirect-section-3" class="pageSection">Redirection</a>
+                <a href="#section-3" class="pageSection">Redirection</a>
                 <br><br>
             </li>
         </ul>
@@ -34,7 +34,7 @@
             </p>
         </div>
 
-        <div class="subText" id="redirect-section-1">
+        <section class="subText" id="section-1">
             <br>
             <h4>
                 Rendering client side
@@ -42,7 +42,8 @@
             <p>
                 Client side rendering (CSR) is ideal for dynamic websites. It may be that the first page is slow to load
                 but then the browser can update content very quickly, maybe using linked JavaScript files, without
-                having to wait for a series of requests to be processed and returned by the server. This has the advantage
+                having to wait for a series of requests to be processed and returned by the server. This has the
+                advantage
                 of making it easier to provide a high UX, but a disadvantage that the site may not perform well with
                 SEO (Search Engine Optimisation) because the web crawlers cannot read all the relevant content.
                 An endpoint in our Express server fight look like this:
@@ -52,12 +53,12 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/frontpage.html")
 });
 </code></pre>
-        </div>
-        <div class="pageNavigation">
-            <a href="#redirect-section-0" class="pageNavigation">Return to top of page</a>
-        </div>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
 
-        <div class="subText" id="redirect-section-2">
+        <section class="subText" id="section-2">
             <br>
             <h4>
                 Rendering server side
@@ -80,12 +81,12 @@ app.get('/', ((req, res) => {
     res.send(frontpagePage);
 }));
 </code></pre>
-        </div>
-        <div class="pageNavigation">
-            <a href="#redirect-section-0" class="pageNavigation">Return to top of page</a>
-        </div>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
 
-        <div class="subText" id="redirect-section-3">
+        <section class="subText" id="section-3">
             <br>
             <h4>
                 Redirection
@@ -126,9 +127,9 @@ app.use((req, res, next) => {
                 Use a reverse proxy like Nginx or Apache to handle redirects before requests even reach your Node.js
                 application.
             </p>
-        </div>
-        <div class="pageNavigation">
-            <a href="#redirect-section-0" class="pageNavigation">Return to top of page</a>
-        </div>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
     </div>
 </div>

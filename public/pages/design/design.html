@@ -104,8 +104,7 @@ app.listen(PORT, () => console.log("Server is running on port", PORT));
 </code></pre>
             <p>
                 HTML files are grouped into a 'pages' directory. Each HTML file should represent a distinct page.
-                We have also provided subfolders for categories of views. Filenames should be lowercase and no spaces,
-                as different browsers/servers/languages handle them differently which can cause errors.
+                We have also provided subfolders for categories of views.
             </p>
             <div class="pageNavigation">
                 <a href="#section-0" class="pageNavigation">Return to top of page</a>
@@ -142,16 +141,30 @@ app.listen(PORT, () => console.log("Server is running on port", PORT));
                 Clean code:
             </h4>
             <p>
-                readability, reusability, professionalism, error catching - again be consistent
-                strict mode, vsc prettier, eslint air b'n'b style
-                filenames should be lowercase and no spaces, as different browsers/servers/languages handle them
-                differently
-            </p>
-            <pre><code>
-code snippet
-            </code></pre>
-            <p>
-                other information
+                Writing clean code is esential, and there are several tools and techniques that can be used to help.
+            <ul>
+                <li>
+                    'use strict' from ECMAScript 5 is, according to Mozilla, the way to opt out of 'sloppy mode'.
+                    It also helps to write cleaner code and catch errors by enforcing stricter parsing and error
+                    handling
+                    on the code at runtime. Not used here as modules are in strict mode by default.<br><br>
+                </li>
+                <li>
+                    Integrating linters and code formatters (e.g., ESLint and Prettier) into your development workflow
+                    enforces code consistency and catches errors early. We use ESLint with air b'n'b style.<br><br>
+                </li>
+                <li>
+                    Naming conventions: Filenames should be lowercase and no spaces, as different
+                    browsers/servers/languages handle them differently which can cause errors.<br><br>
+                </li>
+                <li>
+                    Focus on accessabilty: We can use semantic HTML tags (for example &#60;section&#62; in this html )
+                    to make it
+                    easier to identify type of content. There is a whole standard called WCAG (Web Content Accessibility
+                    Guidelines)
+                    which helps screen readers and assistive technologies to interpret and navigate the content.<br><br>
+                </li>
+            </ul>
             </p>
             <div class="pageNavigation">
                 <a href="#section-0" class="pageNavigation">Return to top of page</a>
