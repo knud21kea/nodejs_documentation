@@ -7,19 +7,19 @@
         </h3>
         <ul class="content">
             <li>
-                <a href="#section-1" class="pageSection">l1</a>
+                <a href="#section-1" class="pageSection">Loops</a>
                 <br><br>
             </li>
             <li>
-                <a href="#section-2" class="pageSection">l2</a>
+                <a href="#section-2" class="pageSection">Side effects</a>
                 <br><br>
             </li>
             <li>
-                <a href="#section-3" class="pageSection">l3</a>
+                <a href="#section-3" class="pageSection">Looping with higher-order functions</a>
                 <br><br>
             </li>
             <li>
-                <a href="#section-4" class="pageSection">l4</a>
+                <a href="#section-4" class="pageSection">Functional programming</a>
                 <br><br>
             </li>
         </ul>
@@ -31,30 +31,160 @@
 
         <div class="introText">
             <h3>
-                Functional approach to loops and how to implement it without side effects.
+                loops are a fundamental construct in programming that enable repetition, automation, and efficient
+                data processing.
             </h3>
             <p>
-                Intro text
+                &emsp;Looping can be implemented in several ways, but we will compare a loop, which is a programming
+                construct for repeating code execution, with a loop method which is a function that encapsulates a
+                loop, providing a way to organize and reuse repetitive code, with the aim of seeing how to avoid
+                programming problems like side effects and code smells.<br><br>
+
             </p>
         </div>
 
         <section class="subText" id="section-1">
             <br>
             <h4>
-                Sub heading:
+                Loops:
             </h4>
             <p>
-                information
+                Traditional loops like for, while and do...while are still used in JavaScript and can be best suited,
+                like when
+                performing a known number of repetitions, iterating Over Arrays or Lists, generating sequences or
+                working with indexes.
             </p>
             <pre><code>
-code snippet
-            </code></pre>
+let sum = 0;
+for (let i = 1; i &#60;= N; i++) {
+    sum += i;
+}
+</code></pre>
             <p>
-                other information
+                But other times a method is shorter, clearer and avoids accidental index errors.
+            </p>
+            <pre><code>
+numbers.forEach(number => console.log(number));
+</code></pre>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
+
+        <section class="subText" id="section-2">
+            <br>
+            <h4>
+                Side effects:
+            </h4>
+            <p>
+                However both examples above can produce side effects, which should as a rule be avoided, because they
+                work directly on the original data, which may well mutate it in a way which is hard to track.
+            </p>
+            <pre><code>
+numbers.forEach((number, index) => {
+    numbers[index] = number * 2;
+    console.log(index);
+});
+</code></pre>
+            <p>
+                Here are two side effects, even with a loop method, the external data numbers is mutated, and index is
+                logged.
             </p>
             <div class="pageNavigation">
                 <a href="#section-0" class="pageNavigation">Return to top of page</a>
             </div>
         </section>
+
+        <section class="subText" id="section-3">
+            <br>
+            <h4>
+                Looping with higher-order functions:
+            </h4>
+            <p>
+                Above we saw a loop method in action. Modern JavaScript provides higher-order functions like map,
+                filter, and reduce.
+                These functions are often more expressive and can lead to more concise and readable code. They avoid
+                some side effects
+                by working on a copy of the passed data. Map returns a new array one to one, filter returns a filtered
+                (smaller) copy,
+                in contrast to forEach which just loops over and returns the same.<br><br>
+                There can still be side effects, but these functions make it possible to avoid processing the original
+                data.
+                We can also use the spread operator (...object) if the object has a lot of data.
+            </p>
+            <pre><code>
+const upgradedTrolls = trolls.map((troll) => ({
+    name: troll.name,
+    trollLevel: troll.trollLevel + 5
+}));
+</code></pre>
+            <p>
+                Here trolls is not mutated, and we should now work on the modified copy in updatedTrolls.
+            </p>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
+
+        <section class="subText" id="section-4">
+            <br>
+            <h4>
+                Functional programming:
+            </h4>
+            <p>
+                Modern JavaScript encourages functional programming paradigms and loop methods can be used in a
+                functional
+                approach to looping, for example:
+            <ul>
+                <li>
+                    Readability and Maintainability:<br>
+                    Functional programming constructs like map, filter, and reduce can make your code more
+                    self-explanatory
+                    and easier to understand than with the use of loops.<br><br>
+                </li>
+                <li>
+                    Immutability:<br>
+                    Looping constructs can potentially modify data in place, which goes against the principles of immutability.
+                    Functional methods typically return new data structures, preserving the original data.<br><br>
+                </li>
+                <li>
+                    Asynchronous Code:<br>
+                    Loops may not work well with asynchronous code since they are typically synchronous in nature. Tools
+                    like async/await and functions like Promise.all or Promise.allSettled are often preferred.<br><br>
+                </li>
+                <li>
+                    Arrow Functions and ES6 Features:<br>
+                    ES6 introduced arrow functions and other features that make working with functional programming
+                    constructs more concise.<br><br>
+                </li>
+                <li>
+                    Avoiding 'Callback Hell':<br>
+                    The "pyramid of doom" is a common issue when dealing with nested callbacks. Asynchronous programming
+                    and functional constructs can help avoiding deep nesting.<br><br>
+                </li>
+                <li>
+                    Error Handling:<br>
+                    Handling mechanisms like try/catch blocks can be more effective than using loops for error handling.<br><br>
+                </li>
+            </ul>
+            </p>
+            <p>
+                Using loop methods encourages good parctice, and in functional programming it is much better
+                to use recursive functions than loops. Here an example of calculating n! without loops. &#x1F60D;
+            </p>
+            <pre><code>
+function factorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+</code></pre>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
+
     </div>
 </div>
