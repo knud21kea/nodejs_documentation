@@ -1,21 +1,47 @@
-<h2>
-    User login
-</h2>
-<div class="introText">
-    <h3>
-        Logging in gives administrator privileges
-    </h3>
-    <p>
-        Entering incorrect credentials will log you out.
-    </p>
-</div>
+<div class="row" id="section-0">
 
-<form method="POST" action="/api/login">
-    <label for="username"></label>
-    <input type="text" placeholder="username" name="username">
-    <br><br>
-    <label for="password"></label>
-    <input type="password" placeholder="password" name="password">
-    <br><br>
-    <button>Log in</button>
-</form>
+    <div class="columnLeft">
+        <img src="/assets/images/login_icon.png" class="index">
+        <h3>
+            Contents:
+        </h3>
+        <ul class="content">
+            <li>
+                <a href="#section-1" class="pageSection">Login</a>
+                <br><br>
+            </li>
+        </ul>
+    </div>
+
+    <div class="columnRight">
+        <h2>
+            User login
+        </h2>
+        <div class="introText">
+            <h3>
+                Logging in gives administrator privileges
+            </h3>
+            <p>
+                Entering incorrect credentials will log you out.
+            </p>
+        </div>
+
+        <section id="section-1">
+            <form method="POST" action="/api/login">
+                <label for="username"></label>
+                <input type="text" placeholder="username" name="username">
+                <br><br>
+                <label for="password"></label>
+                <input type="password" placeholder="password" name="password">
+                <br><br>
+                <button>Log in</button>
+            </form>
+            <div>
+                <img class="admin" src="/assets/images/nodejs_logo.png" alt="Node">
+            </div>
+        </section>
+        <div class="pageNavigation">
+            <a href="#section-0" class="pageNavigation">Return to top of page</a>
+        </div>
+    </div>
+</div>

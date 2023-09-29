@@ -131,6 +131,14 @@ pre {
     border-radius: 1em;
 }
 
+.admin {
+    margin: auto;
+    width: 70vw;
+    height: auto;
+    border-radius: 5em;
+    opacity: 10%;
+}
+
 .content {
     padding-left: 1vw;
  }
