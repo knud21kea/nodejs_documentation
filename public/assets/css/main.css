@@ -1,0 +1,141 @@
+.row {
+    display: flex;
+    min-height: 70vh;
+}
+
+.columnLeft {
+    flex: 10%;
+    padding: 1vw;
+}
+
+.columnLeft h3 {
+    text-decoration: underline;
+}
+
+.columnRight {
+    flex: 90%;
+    padding: 1vw;
+}
+
+main {
+    flex: 1;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    min-height: 72vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    border-radius: 2em;
+    margin-bottom: 2vh;
+    min-height: 13vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer {
+    font-size: medium;
+    min-height: 10vh;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+h3 {
+    font-style: italic;
+}
+
+.introText {
+    font-size: large;
+}
+
+pre {
+
+    white-space: pre;
+    display: inline-block;
+    font-family: monospace;
+    padding: 1vw;
+    border-radius: 1em;
+}
+
+code {
+    padding: 1vw;
+    text-align: left;
+}
+
+.snippet {
+    text-align: left;
+}
+
+#nodejs-logo {
+    max-width: 40vw;
+    height: auto;
+}
+
+.icon {
+    max-width: 4vw;
+    height: auto;
+    border-radius: 1em;
+}
+
+.icon:hover {
+    max-width: 5vw;
+}
+
+.index {
+    max-width: 10vw;
+    height: auto;
+    border-radius: 1em;
+}
+
+.admin {
+    margin: auto;
+    width: 30vw;
+    height: auto;
+    opacity: 75%;
+}
+
+.node {
+    vertical-align: middle;
+    margin-bottom: 0.8vw;
+    display: inline;
+    width: auto;
+    height: 2vw;
+}
+
+.express {
+    vertical-align: middle;
+    margin-bottom: 0.1vw;
+    display: inline;
+    width: auto;
+    height: 1.4vw;
+}
+
+.content {
+    padding-left: 1vw;
+}
+
+input {
+    border-radius: 0.5em;
+    font-size: large;
+}
+
+button {
+    border-radius: 0.5em;
+    font-size: large;
+}
+
+.pageNavigation {
+    font-size: medium;
+    text-align: end;
+}
