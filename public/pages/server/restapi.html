@@ -173,7 +173,8 @@ app.get("/mountains", (req, res) => {
 });
 </code></pre>
             <p>
-                And for a request to update the mountain with id passed as path parameter:
+                And for a request to update the mountain with id passed as path parameter. We need to parse
+                the request body to get the new data to patch, and can send a status code inline with the response.
             </p>
             <pre><code>
 app.use(express.json()); // needed for Express to handle JSON in req.body
