@@ -46,8 +46,8 @@
                 Server structure:
             </h4>
             <p>
-                Place imports at the top of the file, then HTML pages, then APIs ordred by HTTP method (GET, POST, PUT,
-                PATCH, DELETE as described in the 'restapi' page) and finally the server code.
+                &ensp;Place imports at the top of the file, then HTML pages, then APIs ordred by HTTP method
+                (GET, POST, PUT, PATCH, DELETE as described in the 'restapi' page) and finally the server code.
             </p>
             <pre><code>
 import express, { urlencoded } from 'express';
@@ -89,11 +89,10 @@ app.listen(PORT, () => console.log("Server is running on port", PORT));
                 Assets:
             </h4>
             <p>
-                Create an 'assets' folder under 'public' to store static files like images, fonts, stylesheets,
+                &ensp;Create an 'assets' folder under 'public' to store static files like images, fonts, stylesheets,
                 and JavaScript files. This helps keep your project organized and makes it easier to locate and manage
-                assets.
-                Seperate types of assets should be in their own subfolders, which can also be subdivided after
-                functionality if required.
+                assets. Seperate types of assets should be in their own subfolders,
+                which can also be subdivided after functionality if required.
             </p>
             <pre><code>
 /public
@@ -103,7 +102,7 @@ app.listen(PORT, () => console.log("Server is running on port", PORT));
         /js
 </code></pre>
             <p>
-                HTML files are grouped into a 'pages' directory. Each HTML file should represent a distinct page.
+                &ensp;HTML files are grouped into a 'pages' directory. Each HTML file should represent a distinct page.
                 We have also provided subfolders for categories of views.
             </p>
             <div class="pageNavigation">
@@ -117,9 +116,9 @@ app.listen(PORT, () => console.log("Server is running on port", PORT));
                 Components:
             </h4>
             <p>
-                Adopt a component-based approach where you break down your user interface into reusable HTML templates.
-                Each component should encapsulate a specific piece of functionality or content. We have footer and
-                navbar.
+                &ensp;Adopt a component-based approach where you break down your user interface
+                into reusable HTML templates. Each component should encapsulate a specific piece of functionality
+                or content. We have footer and navbar.
             </p>
             <pre><code>
 /components
@@ -127,8 +126,8 @@ app.listen(PORT, () => console.log("Server is running on port", PORT));
     /navbar
 </code></pre>
             <p>
-                Compose complex pages by combining smaller components. This promotes code reuse and makes it easier
-                to manage complex layouts. We use a utility so combine navbar, page and footer.
+                &ensp;Compose complex pages by combining smaller components. This promotes code reuse and makes it easier
+                to manage complex layouts. We use a utility to combine navbar, page and footer.
             </p>
             <div class="pageNavigation">
                 <a href="#section-0" class="pageNavigation">Return to top of page</a>
@@ -141,13 +140,12 @@ app.listen(PORT, () => console.log("Server is running on port", PORT));
                 Clean code:
             </h4>
             <p>
-                Writing clean code is esential, and there are several tools and techniques that can be used to help.
+                &ensp;Writing clean code is esential, and there are several tools and techniques that can be used to help.
             <ul>
                 <li>
                     'use strict' from ECMAScript 5 is, according to Mozilla, the way to opt out of 'sloppy mode'.
                     It also helps to write cleaner code and catch errors by enforcing stricter parsing and error
-                    handling
-                    on the code at runtime. Not used here as modules are in strict mode by default.<br><br>
+                    handling on the code at runtime. Not used here as modules are in strict mode by default.<br><br>
                 </li>
                 <li>
                     Integrating linters and code formatters (e.g., ESLint and Prettier) into your development workflow
@@ -159,9 +157,8 @@ app.listen(PORT, () => console.log("Server is running on port", PORT));
                 </li>
                 <li>
                     Focus on accessabilty: We can use semantic HTML tags (for example &#60;section&#62; in this html )
-                    to make it
-                    easier to identify type of content. There is a whole standard called WCAG (Web Content Accessibility
-                    Guidelines)
+                    to make it easier to identify type of content. There is a whole standard
+                    called WCAG (Web Content Accessibility Guidelines)
                     which helps screen readers and assistive technologies to interpret and navigate the content.<br><br>
                 </li>
             </ul>
