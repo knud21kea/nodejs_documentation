@@ -6,147 +6,145 @@ app.use(express.static('public'));
 app.use(urlencoded({ extended: true }));
 
 let loggedIn = false;
-const mode = 'dark';
+let mode = 'dark';
 
 // Pages --------------------------------------------------------------------------
 
 const frontpage = templateEngine.readPage('./public/pages/frontpage/frontpage.html');
-const frontpagePage = templateEngine.renderPage(frontpage, {
-  theme: mode, tabTitle: 'NJS: Home',
-});
-
 app.get('/', ((req, res) => {
+  const frontpagePage = templateEngine.renderPage(frontpage, {
+    theme: mode, tabTitle: 'NJS: Home',
+  });
   res.send(frontpagePage);
 }));
 
 const terminal = templateEngine.readPage('./public/pages/terminal/terminal.html');
-const terminalPage = templateEngine.renderPage(terminal, {
-  theme: mode, tabTitle: 'NJS: Terminal',
-});
-
 app.get('/terminal', ((req, res) => {
+  const terminalPage = templateEngine.renderPage(terminal, {
+    theme: mode, tabTitle: 'NJS: Terminal',
+  });
   res.send(terminalPage);
 }));
 
 const nodejs = templateEngine.readPage('./public/pages/nodejs/nodejs.html');
-const nodejsPage = templateEngine.renderPage(nodejs, {
-  theme: mode, tabTitle: 'NJS: Nodejs',
-});
-
 app.get('/nodejs', ((req, res) => {
+  const nodejsPage = templateEngine.renderPage(nodejs, {
+    theme: mode, tabTitle: 'NJS: Nodejs',
+  });
   res.send(nodejsPage);
 }));
 
 const modules = templateEngine.readPage('./public/pages/nodejs/modules.html');
-const modulesPage = templateEngine.renderPage(modules, {
-  theme: mode, tabTitle: 'NJS: Modules',
-});
-
 app.get('/modules', ((req, res) => {
+  const modulesPage = templateEngine.renderPage(modules, {
+    theme: mode, tabTitle: 'NJS: Modules',
+  });
   res.send(modulesPage);
 }));
 
 const variables = templateEngine.readPage('./public/pages/javascript/variables.html');
-const variablesPage = templateEngine.renderPage(variables, {
-  theme: mode, tabTitle: 'NJS: Variables',
-});
-
 app.get('/variables', ((req, res) => {
+  const variablesPage = templateEngine.renderPage(variables, {
+    theme: mode, tabTitle: 'NJS: Variables',
+  });
   res.send(variablesPage);
 }));
 
 const functions = templateEngine.readPage('./public/pages/javascript/functions.html');
-const functionsPage = templateEngine.renderPage(functions, {
-  theme: mode, tabTitle: 'NJS: Functions',
-});
-
 app.get('/functions', ((req, res) => {
+  const functionsPage = templateEngine.renderPage(functions, {
+    theme: mode, tabTitle: 'NJS: Functions',
+  });
   res.send(functionsPage);
 }));
 
 const loops = templateEngine.readPage('./public/pages/javascript/loops.html');
-const loopsPage = templateEngine.renderPage(loops, {
-  theme: mode, tabTitle: 'NJS: Loops',
-});
-
 app.get('/loops', ((req, res) => {
+  const loopsPage = templateEngine.renderPage(loops, {
+    theme: mode, tabTitle: 'NJS: Loops',
+  });
   res.send(loopsPage);
 }));
 
 const restapi = templateEngine.readPage('./public/pages/server/restapi.html');
-const restapiPage = templateEngine.renderPage(restapi, {
-  theme: mode, tabTitle: 'NJS: REST',
-});
-
 app.get('/restapi', ((req, res) => {
+  const restapiPage = templateEngine.renderPage(restapi, {
+    theme: mode, tabTitle: 'NJS: REST',
+  });
   res.send(restapiPage);
 }));
 
 const website = templateEngine.readPage('./public/pages/server/website.html');
-const websitePage = templateEngine.renderPage(website, {
-  theme: mode, tabTitle: 'NJS: Website',
-});
-
 app.get('/website', ((req, res) => {
+  const websitePage = templateEngine.renderPage(website, {
+    theme: mode, tabTitle: 'NJS: Website',
+  });
   res.send(websitePage);
 }));
 
 const redirect = templateEngine.readPage('./public/pages/server/redirect.html');
-const redirectPage = templateEngine.renderPage(redirect, {
-  theme: mode, tabTitle: 'NJS: Redirect',
-});
-
 app.get('/redirect', ((req, res) => {
+  const redirectPage = templateEngine.renderPage(redirect, {
+    theme: mode, tabTitle: 'NJS: Redirect',
+  });
   res.send(redirectPage);
 }));
 
 const design = templateEngine.readPage('./public/pages/design/design.html');
-const designPage = templateEngine.renderPage(design, {
-  theme: mode, tabTitle: 'NJS: Design',
-});
-
 app.get('/design', ((req, res) => {
+  const designPage = templateEngine.renderPage(design, {
+    theme: mode, tabTitle: 'NJS: Design',
+  });
   res.send(designPage);
 }));
 
 const xss = templateEngine.readPage('./public/pages/xss/xss.html');
-const xssPage = templateEngine.renderPage(xss, {
-  theme: mode, tabTitle: 'NJS: XSS',
-});
-
 app.get('/xss', ((req, res) => {
+  const xssPage = templateEngine.renderPage(xss, {
+    theme: mode, tabTitle: 'NJS: XSS',
+  });
   res.send(xssPage);
 }));
 
 const bluesky = templateEngine.readPage('./public/pages/bluesky/bluesky.html');
-const blueskyPage = templateEngine.renderPage(bluesky, {
-  theme: mode, tabTitle: 'NJS: Blue sky',
-});
-
 app.get('/bluesky', ((req, res) => {
+  const blueskyPage = templateEngine.renderPage(bluesky, {
+    theme: mode, tabTitle: 'NJS: Blue sky',
+  });
   res.send(blueskyPage);
 }));
 
 const login = templateEngine.readPage('./public/pages/admin/login.html');
-const loginPage = templateEngine.renderPage(login, {
-  theme: mode, tabTitle: 'NJS: Login',
-});
-
 app.get('/login', ((req, res) => {
+  const loginPage = templateEngine.renderPage(login, {
+    theme: mode, tabTitle: 'NJS: Login',
+  });
   res.send(loginPage);
 }));
 
 const admin = templateEngine.readPage('./public/pages/admin/admin.html');
-const adminPage = templateEngine.renderPage(admin, {
-  theme: mode, tabTitle: 'NJS: Admin',
-});
-
 app.get('/admin', ((req, res) => {
+  const adminPage = templateEngine.renderPage(admin, {
+    theme: mode, tabTitle: 'NJS: Admin',
+  });
   if (!loggedIn) {
     res.redirect('/login');
   } else {
     res.send(adminPage);
   }
+}));
+
+app.get('/theme', ((req, res) => {
+  if (mode === 'dark') {
+    mode = 'light';
+  } else {
+    mode = 'dark';
+  }
+  const frontpagePage = templateEngine.renderPage(frontpage, {
+    theme: mode, tabTitle: 'NJS: Home',
+  });
+
+  res.send(frontpagePage);
 }));
 
 // API ---------------------------------------------------------------------------
