@@ -41,23 +41,21 @@
                 Why serve static files?
             </h4>
             <p>
-                Static files are ones that do not change while the application is running. Web applications used to be
+                &ensp;Static files are ones that do not change while the application is running. Web applications used to be
                 generally static, but modern ones are mostly dynamic, where a browser can and does modify the html based
                 on external input, for example from a user, or by fetching from an API.<br><br>
-                We need to serve the files for security reasons. In general a client should not have access to a server.
+                &ensp;We need to serve the files for security reasons. In general a client should not have access to a server.
                 This application uses middleware included in Express to restrict access to files in one folder.
             </p>
             <pre><code>
 app.use(express.static('public'));
             </code></pre>
             <p>
-                This means that the browser has access to any files (eg JavaScript, CSS, media etc) that are in the
-                ./public folder
-                or any of its subfolders, but not any outside that tree, which reduces the application's attack
-                surface.<br><br>
-                Middleware functions are functions that have access to the request and response objects and can perform
-                tasks
-                such as modifying the request or response, authenticating users, logging, etc.
+                &ensp;This means that the browser has access to any files (eg JavaScript, CSS, media etc) that are in the
+                ./public folder or any of its subfolders, but not any outside that tree,
+                which reduces the application's attack surface.<br><br>
+                &ensp;Middleware functions are functions that have access to the request and response objects
+                and can perform tasks such as modifying the request or response, authenticating users, logging, etc.
                 The use() method adds the middleware function to the request handling pipeline.
             </p>
         <div class="pageNavigation">
@@ -71,7 +69,7 @@ app.use(express.static('public'));
                 Serving the files:
             </h4>
             <p>
-                To display a page via this application, a browser sends a request for a file via a GET mapping
+                &ensp;To display a page via this application, a browser sends a request for a file via a GET mapping
                 on an endpoint. For this page it would be on http://'domain'/website. The endpoint has handling code.
             </p>
             <pre><code>
@@ -85,7 +83,7 @@ app.get('/website', ((req, res) => {
 }));
 </code></pre>
             <p>
-                'templateEngine' is a custom module (see the 'modules' page) which takes the body data from website.html
+                &ensp;'templateEngine' is a custom module (see the 'modules' page) which takes the body data from website.html
                 appends it to the navbar fragment, appends the footer fragment and sends it as response. The browser can
                 then run the html and display the page using the linked CSS. There is some more information on rendering
                 in the 'redirect' page.
@@ -101,20 +99,20 @@ app.get('/website', ((req, res) => {
                 Connecting static content:
             </h4>
             <p>
-                There are two common techniques to integrate content within a webpage. To navigate between resources
-                we can use hyperlinking with clickable anchors.
+                &ensp;There are two common techniques to integrate content within a webpage.
+                To navigate between resources we can use hyperlinking with clickable anchors.
             </p>
             <pre><code>
 &#60;a href="/modules"a&#62;&#60;/a&#62;
 </code></pre>
             <p>
-                An to import another resorce we can use embedding, for example to load an image.
+                &ensp;And to import another resorce we can use embedding, for example to load an image.
             </p>
             <pre><code>
 &#60;img src="/assets/images/modules_icon.png" class="icon"&#62;
 </code></pre>
             <p>
-                We actually combine these on our navbar to make a request for another page by clicking an image.
+                &ensp;We actually combine these on our navbar to make a request for another page by clicking an image.
             </p>
             <pre><code>
 &#60;a title="modules" href="/modules"&#62;&#60;img src="/assets/images/modules_icon.png" class="icon"&#62;&#60;/a&#62;

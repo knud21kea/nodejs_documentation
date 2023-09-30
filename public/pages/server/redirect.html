@@ -40,13 +40,12 @@
                 Rendering client side
             </h4>
             <p>
-                Client side rendering (CSR) is ideal for dynamic websites. It may be that the first page is slow to load
+                &ensp;Client side rendering (CSR) is ideal for dynamic websites. It may be that the first page is slow to load
                 but then the browser can update content very quickly, maybe using linked JavaScript files, without
-                having to wait for a series of requests to be processed and returned by the server. This has the
-                advantage
-                of making it easier to provide a high UX, but a disadvantage that the site may not perform well with
-                SEO (Search Engine Optimisation) because the web crawlers cannot read all the relevant content.
-                An endpoint in our Express server fight look like this:
+                having to wait for a series of requests to be processed and returned by the server.
+                This has the advantage of making it easier to provide a high UX, but a disadvantage
+                that the site may not perform well with SEO (Search Engine Optimisation) because the web crawlers
+                cannot read all the relevant content. An endpoint in our Express server might look like this:
             </p>
             <pre><code>
 app.get("/", (req, res) => {
@@ -64,12 +63,11 @@ app.get("/", (req, res) => {
                 Rendering server side
             </h4>
             <p>
-                Server side rendering (SSR) is good for static websites. After receiving a request for a page, the
-                server
-                accesses all data required, renders the page to match the request, and returns a complete HTML file.
+                &ensp;Server side rendering (SSR) is good for static websites. After receiving a request for a page, the
+                server accesses all data required, renders the page to match the request, and returns a complete HTML file.
                 The browser only needs to execute the HTML, which is fast, and the site scores well in SEO as all data
                 is available. But if the page needs updating, for example after user input, then the process is slow
-                and server load high. An endpoint in our Express server fight look like this:
+                and server load high. An endpoint in our Express server might look like this:
             </p>
             <pre><code>
 const frontpage = templateEngine.readPage('./public/pages/frontpage/frontpage.html');
@@ -92,7 +90,7 @@ app.get('/', ((req, res) => {
                 Redirection
             </h4>
             <p>
-                Redirection is sending the browser to an alternative url. Here are four ways to do it:
+                &ensp;Redirection is sending the browser to an alternative url. Here are four ways to do it:
             </p>
             <h5>
                 Client side
@@ -124,8 +122,8 @@ app.use((req, res, next) => {
                 Proxy
             </h5>
             <p>
-                Use a reverse proxy like Nginx or Apache to handle redirects before requests even reach your Node.js
-                application.
+                &ensp;Use a reverse proxy like Nginx or Apache to handle redirects before requests
+                even reach the Node.js application.
             </p>
             <div class="pageNavigation">
                 <a href="#section-0" class="pageNavigation">Return to top of page</a>

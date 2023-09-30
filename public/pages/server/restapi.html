@@ -36,7 +36,7 @@
             <p>
                 &emsp;REST (REpresentational State Transfer) is a set of architectural constraints, not a protocol or a
                 standard. API developers can implement REST in a variety of ways.<br>
-                &emsp;In our implementation the request and response were in the HTTP:JSON format.
+                &emsp;In our implementation the request and response are in the HTTP:JSON format.
             </p>
         </div>
 
@@ -46,10 +46,9 @@
                 JSON and JavaScript:
             </h4>
             <p>
-                Despite the name, JSON (JavaScript Object Notation) is language independant and not the same as a
-                JavaScript Object.
-                JavaScript Objects are simple key-value pairs with no quotes unless there are spaces in the key name,
-                but JSON needs quotes to be valid. We can convert between the two.
+                &ensp;Despite the name, JSON (JavaScript Object Notation) is language independant and not the same as a
+                JavaScript Object. They are simple key-value pairs with no quotes unless there are spaces
+                in the key name, but JSON needs quotes to be valid. We can convert between the two.
             </p>
             <pre><code>
 JSON.parse(); //Turns a JSON string into an JavaScript object
@@ -66,7 +65,7 @@ JSON.stringify(); //Turns a JavaScript object into JSON string/data
                 What makes an API Restful?:
             </h4>
             <p>
-                In order for an API to be considered RESTful, it has to conform to these criteria:
+                &ensp;In order for an API to be considered RESTful, it has to conform to these criteria:
 
             <ul>
                 <li>
@@ -126,7 +125,7 @@ JSON.stringify(); //Turns a JavaScript object into JSON string/data
                 Conventions:
             </h4>
             <p>
-                We have followed two conventions when designing our API:
+                &ensp;We have followed two conventions when designing our API:
             <ul>
                 <li>
                     Order the endpoints based on HTTP methods,
@@ -138,7 +137,7 @@ JSON.stringify(); //Turns a JavaScript object into JSON string/data
             </ul>
             </p>
             <p>
-                For example with the mountains API:
+                &ensp;For example with the mountains API:
             </p>
             <pre><code>
 HTTP Method     Endpoint
@@ -161,11 +160,11 @@ DELETE          /mountains/:id
                 Building the APIs endpoints with Express:
             </h4>
             <p>
-                Using the Express server we created (see 'nodejs' page) we add routes handling CRUD requests.
+                &ensp;Using the Express server we created (see 'nodejs' page) we add routes handling CRUD requests.
                 We can make good use of callback functions in the code responsible for handling the requests.
             </p>
             <p>
-                For example with a request to get all mountains:
+                &ensp;For example with a request to get all mountains:
             </p>
             <pre><code>
 app.get("/mountains", (req, res) => {
@@ -173,7 +172,7 @@ app.get("/mountains", (req, res) => {
 });
 </code></pre>
             <p>
-                And for a request to update the mountain with id passed as path parameter. We need to parse
+                &ensp;And for a request to update the mountain with id passed as path parameter. We need to parse
                 the request body to get the new data to patch, and can send a status code inline with the response.
             </p>
             <pre><code>
@@ -190,7 +189,7 @@ app.patch("/mountains/:id", (req, res) => {
 });
  </code></pre>
             <p>
-                For more info on the advantages of findIndex() and ... (spread) see the 'loops' page.
+                &ensp;For more info on the advantages of findIndex() and ... (spread) see the 'loops' page.
             </p>
             <div class="pageNavigation">
                 <a href="#section-0" class="pageNavigation">Return to top of page</a>
