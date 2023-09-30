@@ -38,8 +38,7 @@
                 &emsp;Looping can be implemented in several ways, but we will compare a loop, which is a programming
                 construct for repeating code execution, with a loop method which is a function that encapsulates a
                 loop, providing a way to organize and reuse repetitive code, with the aim of seeing how to avoid
-                programming problems like side effects and code smells.<br><br>
-
+                programming problems like side effects and code smells.
             </p>
         </div>
 
@@ -49,9 +48,8 @@
                 Loops:
             </h4>
             <p>
-                Traditional loops like for, while and do...while are still used in JavaScript and can be best suited,
-                like when
-                performing a known number of repetitions, iterating Over Arrays or Lists, generating sequences or
+                Traditional loops like 'for', 'while' and 'do...while' are still used in JavaScript and can be best suited,
+                like when performing a known number of repetitions, iterating over Arrays or Lists, generating sequences or
                 working with indexes.
             </p>
             <pre><code>
@@ -61,7 +59,7 @@ for (let i = 1; i &#60;= N; i++) {
 }
 </code></pre>
             <p>
-                But other times a method is shorter, clearer and avoids accidental index errors.
+                But at other times a method is shorter, clearer and avoids accidental index errors, like here with 'forEach'.
             </p>
             <pre><code>
 numbers.forEach(number => console.log(number));
@@ -101,16 +99,13 @@ numbers.forEach((number, index) => {
                 Looping with higher-order functions:
             </h4>
             <p>
-                Above we saw a loop method in action. Modern JavaScript provides higher-order functions like map,
-                filter, and reduce.
-                These functions are often more expressive and can lead to more concise and readable code. They avoid
-                some side effects
-                by working on a copy of the passed data. Map returns a new array one to one, filter returns a filtered
-                (smaller) copy,
-                in contrast to forEach which just loops over and returns the same.<br><br>
+                We just saw a loop method in action, but modern JavaScript provides higher-order functions like 'map',
+                'filter', and 'reduce'. These functions are often more expressive and can lead to more concise and
+                readable code. They avoid some side effects by working on a copy of the passed data. Map returns a new
+                array one to one, filter returns a filtered (smaller) copy, in contrast to forEach which just loops over
+                and returns the same.<br><br>
                 There can still be side effects, but these functions make it possible to avoid processing the original
-                data.
-                We can also use the spread operator (...object) if the object has a lot of data.
+                data. We can also use the spread operator (...object) if the object has a lot of data.
             </p>
             <pre><code>
 const upgradedTrolls = trolls.map((troll) => ({
@@ -139,8 +134,7 @@ const upgradedTrolls = trolls.map((troll) => ({
                 <li>
                     Readability and Maintainability:<br>
                     Functional programming constructs like map, filter, and reduce can make your code more
-                    self-explanatory
-                    and easier to understand than with the use of loops.<br><br>
+                    self-explanatory and easier to understand than with the use of loops.<br><br>
                 </li>
                 <li>
                     Immutability:<br>

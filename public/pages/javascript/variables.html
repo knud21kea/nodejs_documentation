@@ -52,7 +52,7 @@
 				Data types:
 			</h4>
 			<p>
-				There are 8 data types in javascript
+				&ensp;There are 8 data types in javascript
 			<ul>
 				<li>String - represents sequence of characters</li>
 				<li>Number - represents numeric values</li>
@@ -66,10 +66,9 @@
 			</ul>
 			</p>
 			<p>
-				Although they seem similar, undefined indicates the absence of a value, while null indicates the absence
-				of an object .
-				JavaScript usually defaults to undefined when something is devoid of a value. You can find type using
-				typeof().
+				&ensp;Although they seem similar, undefined indicates the absence of a value,
+				while null indicates the absence of an object. JavaScript usually defaults to undefined
+				when something is devoid of a value. You can find type using typeof().
 			</p>
 			<pre><code>
 const value = true;
@@ -86,7 +85,7 @@ console.log(typeof(value));
 				Dynamic types:
 			</h4>
 			<p>
-				JavaScript is a dynamic language with dynamic types.
+				&ensp;JavaScript is a dynamic language with dynamic types.
 				Variables in JavaScript are not directly associated with any particular value type
 				and any variable can be assigned (and re-assigned) values of all types.
 			</p>
@@ -106,10 +105,9 @@ myVariable = true; // myVariable is now a boolean
 				Weak typing and type coercion:
 			</h4>
 			<p>
-				It is also a weakly typed language. This means that you can often use a value of one type where another
-				type is expected,
-				and the language will convert it to the right type for you, instead of throwing type errors. This is
-				type coercion.
+				&ensp;It is also a weakly typed language. This means that you can often use a value of one type where another
+				type is expected, and the language will convert it to the right type for you,
+				instead of throwing type errors. This is type coercion.
 			</p>
 			<pre><code>
 const myVariable = 7; // a number
@@ -117,20 +115,24 @@ const result = myVariable + "1"; // JavaScript coerces myVariable to a string
 console.log(result); // "71"
 </code></pre>
 			<p>
-				When comparing data the == operator performs a loose check with type coercion, while === requires
-				identical type.
+				&ensp;When comparing data the == operator performs a loose check with type coercion,
+				while === requires identical type.
 			</p>
 			<p>
-				JavaScript defines coercion rules:
+				&ensp;JavaScript defines coercion rules:
 			<ul>
-				<li>Primitive coercion - where a primitive value is expected, but no strong preference for the actual
-					type;</li>
-				<li>Numeric coercion - bigint, number;</li>
-				<li>Other coercions - string, boolean, object.</li>
+				<li>Primitive coercion - where a primitive value is expected, but no strong preference for the actual type;
+				</li>
+				<li>
+					Numeric coercion - bigint, number;
+				</li>
+				<li>Other coercions - string, boolean, object.
+
+				</li>
 			</ul>
 			</p>
 			<p>
-				The details of coercion rules are beyond the scope of this document.<br>
+				&ensp;The details of coercion rules are beyond the scope of this document.<br>
 				More info can be found on the MDN site at
 				https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
 			</p>

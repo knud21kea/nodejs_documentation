@@ -107,18 +107,17 @@ code {
 
 .node {
     vertical-align: middle;
-    margin-bottom: 0.8vw;
+    margin-bottom: 0.5vw;
     display: inline;
     width: auto;
-    height: 2vw;
+    height: 1.5vw;
 }
 
 .express {
     vertical-align: middle;
-    margin-bottom: 0.1vw;
     display: inline;
     width: auto;
-    height: 1.4vw;
+    height: 1.5vw;
 }
 
 .content {
