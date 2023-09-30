@@ -6,12 +6,13 @@ app.use(express.static('public'));
 app.use(urlencoded({ extended: true }));
 
 let loggedIn = false;
+const mode = 'dark';
 
 // Pages --------------------------------------------------------------------------
 
 const frontpage = templateEngine.readPage('./public/pages/frontpage/frontpage.html');
 const frontpagePage = templateEngine.renderPage(frontpage, {
-  tabTitle: 'NJS: Home',
+  theme: mode, tabTitle: 'NJS: Home',
 });
 
 app.get('/', ((req, res) => {
@@ -20,7 +21,7 @@ app.get('/', ((req, res) => {
 
 const terminal = templateEngine.readPage('./public/pages/terminal/terminal.html');
 const terminalPage = templateEngine.renderPage(terminal, {
-  tabTitle: 'NJS: Terminal',
+  theme: mode, tabTitle: 'NJS: Terminal',
 });
 
 app.get('/terminal', ((req, res) => {
@@ -29,7 +30,7 @@ app.get('/terminal', ((req, res) => {
 
 const nodejs = templateEngine.readPage('./public/pages/nodejs/nodejs.html');
 const nodejsPage = templateEngine.renderPage(nodejs, {
-  tabTitle: 'NJS: Nodejs',
+  theme: mode, tabTitle: 'NJS: Nodejs',
 });
 
 app.get('/nodejs', ((req, res) => {
@@ -38,7 +39,7 @@ app.get('/nodejs', ((req, res) => {
 
 const modules = templateEngine.readPage('./public/pages/nodejs/modules.html');
 const modulesPage = templateEngine.renderPage(modules, {
-  tabTitle: 'NJS: Modules',
+  theme: mode, tabTitle: 'NJS: Modules',
 });
 
 app.get('/modules', ((req, res) => {
@@ -47,7 +48,7 @@ app.get('/modules', ((req, res) => {
 
 const variables = templateEngine.readPage('./public/pages/javascript/variables.html');
 const variablesPage = templateEngine.renderPage(variables, {
-  tabTitle: 'NJS: Variables',
+  theme: mode, tabTitle: 'NJS: Variables',
 });
 
 app.get('/variables', ((req, res) => {
@@ -56,7 +57,7 @@ app.get('/variables', ((req, res) => {
 
 const functions = templateEngine.readPage('./public/pages/javascript/functions.html');
 const functionsPage = templateEngine.renderPage(functions, {
-  tabTitle: 'NJS: Functions',
+  theme: mode, tabTitle: 'NJS: Functions',
 });
 
 app.get('/functions', ((req, res) => {
@@ -65,7 +66,7 @@ app.get('/functions', ((req, res) => {
 
 const loops = templateEngine.readPage('./public/pages/javascript/loops.html');
 const loopsPage = templateEngine.renderPage(loops, {
-  tabTitle: 'NJS: Loops',
+  theme: mode, tabTitle: 'NJS: Loops',
 });
 
 app.get('/loops', ((req, res) => {
@@ -74,7 +75,7 @@ app.get('/loops', ((req, res) => {
 
 const restapi = templateEngine.readPage('./public/pages/server/restapi.html');
 const restapiPage = templateEngine.renderPage(restapi, {
-  tabTitle: 'NJS: REST',
+  theme: mode, tabTitle: 'NJS: REST',
 });
 
 app.get('/restapi', ((req, res) => {
@@ -83,7 +84,7 @@ app.get('/restapi', ((req, res) => {
 
 const website = templateEngine.readPage('./public/pages/server/website.html');
 const websitePage = templateEngine.renderPage(website, {
-  tabTitle: 'NJS: Website',
+  theme: mode, tabTitle: 'NJS: Website',
 });
 
 app.get('/website', ((req, res) => {
@@ -92,7 +93,7 @@ app.get('/website', ((req, res) => {
 
 const redirect = templateEngine.readPage('./public/pages/server/redirect.html');
 const redirectPage = templateEngine.renderPage(redirect, {
-  tabTitle: 'NJS: Redirect',
+  theme: mode, tabTitle: 'NJS: Redirect',
 });
 
 app.get('/redirect', ((req, res) => {
@@ -101,7 +102,7 @@ app.get('/redirect', ((req, res) => {
 
 const design = templateEngine.readPage('./public/pages/design/design.html');
 const designPage = templateEngine.renderPage(design, {
-  tabTitle: 'NJS: Design',
+  theme: mode, tabTitle: 'NJS: Design',
 });
 
 app.get('/design', ((req, res) => {
@@ -110,7 +111,7 @@ app.get('/design', ((req, res) => {
 
 const xss = templateEngine.readPage('./public/pages/xss/xss.html');
 const xssPage = templateEngine.renderPage(xss, {
-  tabTitle: 'NJS: XSS',
+  theme: mode, tabTitle: 'NJS: XSS',
 });
 
 app.get('/xss', ((req, res) => {
@@ -119,7 +120,7 @@ app.get('/xss', ((req, res) => {
 
 const bluesky = templateEngine.readPage('./public/pages/bluesky/bluesky.html');
 const blueskyPage = templateEngine.renderPage(bluesky, {
-  tabTitle: 'NJS: Blue sky',
+  theme: mode, tabTitle: 'NJS: Blue sky',
 });
 
 app.get('/bluesky', ((req, res) => {
@@ -128,7 +129,7 @@ app.get('/bluesky', ((req, res) => {
 
 const login = templateEngine.readPage('./public/pages/admin/login.html');
 const loginPage = templateEngine.renderPage(login, {
-  tabTitle: 'NJS: Login',
+  theme: mode, tabTitle: 'NJS: Login',
 });
 
 app.get('/login', ((req, res) => {
@@ -137,7 +138,7 @@ app.get('/login', ((req, res) => {
 
 const admin = templateEngine.readPage('./public/pages/admin/admin.html');
 const adminPage = templateEngine.renderPage(admin, {
-  tabTitle: 'NJS: Admin',
+  theme: mode, tabTitle: 'NJS: Admin',
 });
 
 app.get('/admin', ((req, res) => {
