@@ -1,6 +1,6 @@
 .columnLeft {
     background-color: rgb(22, 22, 22);
-    background-image: linear-gradient(to right, rgb(250, 250, 250), rgb(232, 232, 232));
+    background-image: linear-gradient(to right, rgb(250, 250, 250), rgb(214, 214, 214));
 }
 
 .columnLeft h3 {
@@ -9,15 +9,7 @@
 
 .columnRight {
     background-color: rgb(23, 23, 23);
-    background-image: linear-gradient(to right, rgb(233, 233, 233), rgb(250, 250, 250));
-}
-
-.columnRight.dark {
-    background-color: rgb(30, 30, 30);
-}
-
-.columnRight.light {
-    background-color: rgb(200, 200, 200);
+    background-image: linear-gradient(to right, rgb(211, 211, 211), rgb(250, 250, 250));
 }
 
 body {
@@ -29,7 +21,7 @@ main {
 }
 
 nav {
-    background-image: linear-gradient(rgba(40, 32, 54, 1), rgba(40, 32, 54, 0.7), rgba(40, 32, 54, 1));
+    background-image: linear-gradient(rgba(40, 32, 54, 0.7), rgba(40, 32, 54, 0.4), rgba(40, 32, 54, 0.7));
 }
 
 footer {
