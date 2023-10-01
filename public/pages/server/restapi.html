@@ -22,6 +22,10 @@
                 <a href="#section-4" class="pageSection">Building the APIs endpoints with Express</a>
                 <br><br>
             </li>
+            <li>
+                <a href="#section-5" class="pageSection">Requesting the data</a>
+                <br><br>
+            </li>
         </ul>
     </div>
 
@@ -48,7 +52,21 @@
             <p>
                 &ensp;Despite the name, JSON (JavaScript Object Notation) is language independant and not the same as a
                 JavaScript Object. They are simple key-value pairs with no quotes unless there are spaces
-                in the key name, but JSON needs quotes to be valid. We can convert between the two.
+                in the key name:
+            </p>
+            <pre><code>
+{ name : "Mount Blanc" }
+{ "mountain name" : "Mount Blanc" }
+</code></pre>
+            <p>
+                But JSON requires quotes to be valid:
+            </p>
+            <pre><code>
+{ "name" : "Mount Blanc" }
+</code></pre>
+            <p>
+                &ensp;If there are two key value pairs with the same key, then the value is always the last value,
+                and we can convert between JavaScript objects and JSON by:
             </p>
             <pre><code>
 JSON.parse(); //Turns a JSON string into an JavaScript object
@@ -191,6 +209,77 @@ app.patch("/mountains/:id", (req, res) => {
             <p>
                 &ensp;For more info on the advantages of findIndex() and ... (spread) see the 'loops' page.
             </p>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
+
+        <section class="subText" id="section-5">
+            <br>
+            <h4>
+                Requesting the data:
+            </h4>
+            <p>
+                &ensp;An external user can get data from the API by calling the global function fetch() method
+                starting the process of fetching a resource from the network,
+                returning a promise which is fulfilled once the response is available.<br><br>
+                &ensp;The call is of the form fetch().then().then() which gives 2 promises
+                The .then() method is a callback function that executes when a Promise is resolved.
+                It takes one or two callback functions as arguments.
+                The first callback function is called when the Promise is resolved, and it receives the resolved value
+                as an argument.
+                The second callback function (optional) is called when the Promise is rejected, and it recieves an error
+                object as an argument.
+                &ensp;The promise only rejects when a network error is encountered not on HTTP errors (404, etc.).
+                Instead, a then() handler must check the Response.ok and/or Response.status properties.<br><br>
+                &ensp;The fetch takes two parameters, 'resource' and optionally 'options', fetch(resource, options)
+                where:
+            <ul>
+                <li>
+                    resource -<br>
+                    Defines the resource that you wish to fetch which is one of:
+                    <ul>
+                        <li>
+                            A string that provides the URL of the resource you want to fetch;
+                        </li>
+                        <li>
+                            A Request object.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    options -<br>
+                    An object containing any custom settings that you want to apply to the request.
+                    There are many possible inluding in particular:
+                    <ul>
+                        <li>
+                            method (GET(default), POST,...);
+                        </li>
+                        <li>
+                            headers (in a Headers object);
+                        </li>
+                        <li>
+                            body (for example json). Body is not allowed if method = GET.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            &ensp;The return value is a Promise that resolves to a Response object.
+            </p>
+            <pre><code>
+const myRequest = new Request("domain/mountains/{id}");
+
+fetch(myRequest)
+.then((response) => {
+    if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }                
+    return response.json();
+})
+.then((response) => {
+    const mountainName = response.name;
+});
+</code></pre>
             <div class="pageNavigation">
                 <a href="#section-0" class="pageNavigation">Return to top of page</a>
             </div>

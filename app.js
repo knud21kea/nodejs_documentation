@@ -106,14 +106,6 @@ app.get('/xss', ((req, res) => {
   res.send(xssPage);
 }));
 
-const bluesky = templateEngine.readPage('./public/pages/bluesky/bluesky.html');
-app.get('/bluesky', ((req, res) => {
-  const blueskyPage = templateEngine.renderPage(bluesky, {
-    theme: mode, tabTitle: 'NJS: Blue sky',
-  });
-  res.send(blueskyPage);
-}));
-
 const login = templateEngine.readPage('./public/pages/admin/login.html');
 app.get('/login', ((req, res) => {
   const loginPage = templateEngine.renderPage(login, {

@@ -70,10 +70,11 @@ const add = function(x, y) {
             </h4>
             <p>
                 &ensp;Arrow functions are a concise way to write functions in JavaScript, introduced in ES6.
-                They are especially useful for single line functions and for maintaining the context of the surrounding code.
+                They are especially useful for single line functions and for maintaining the context of the surrounding
+                code.
             </p>
             <pre><code>
-const add = (x, y) => x + y;                 
+const add = (x, y) => x + y;
 </code></pre>
             </p>
             <div class="pageNavigation">
@@ -101,6 +102,76 @@ app.listen(PORT, (error) => {
     console.log('Server is running on port:', PORT);
 });            
 </code></pre>
+            <p>
+                &ensp;Callback functions can be written with different syntax. Some examples of this are:
+            </p>
+            <ul>                
+                <li>
+                    <h5>
+                        Named function
+                    </h5>
+                    <pre><code>
+function myCallback(arg1, arg2) {
+    ...
+}
+someAsyncFunction(arg1, arg2, myCallback);
+</code></pre>
+                </li>
+                <li>
+                    <h5>
+                        Anonymous function
+                    </h5>
+                    <pre><code>
+someAsyncFunction(arg1, arg2, function(arg1, arg2)) {
+    ...
+}
+</code></pre>
+                </li>
+                <li>
+                    <h5>
+                        Arrow function (ES6)
+                    </h5>
+                    <pre><code>
+someAsyncFunction(arg1, arg2, (arg1, arg2) => {
+    ...
+});                          
+</code></pre>
+                </li>
+                <li>
+                    <h5>
+                        setInterval or setTimeout
+                    </h5>
+                    <pre><code>
+setTimeout(function() {
+    ...
+}, 1000);                                                  
+</code></pre>
+                </li>
+                <li>
+                    <h5>
+                        Promise
+                    </h5>
+                    <pre><code>
+function someAsyncFunction(arg1, arg2) {
+    return new Promise((resolve, reject) => {
+        ...
+        if (success) {
+            resolve(result);
+        } else {
+             reject(error);
+        }
+    });
+}
+someAsyncFunction(arg1, arg2)
+    .then(result => {
+        ...
+    })
+    .catch(error => {
+        ...
+    });                                                                           
+</code></pre>
+                </li>
+            </ul>
             <div class="pageNavigation">
                 <a href="#section-0" class="pageNavigation">Return to top of page</a>
             </div>
@@ -177,7 +248,8 @@ app.listen(PORT, (error) => {
                 Concurrency and Parallelism:
             </h5>
             <p>
-                &ensp;Functional programming encourages the use of pure functions, which have no shared state or side effects.
+                &ensp;Functional programming encourages the use of pure functions, which have no shared state or side
+                effects.
             </p>
             <div class="pageNavigation">
                 <a href="#section-0" class="pageNavigation">Return to top of page</a>

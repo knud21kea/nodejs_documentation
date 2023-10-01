@@ -49,8 +49,18 @@
             </p>
             <pre><code>
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/frontpage.html")
-});
+    res.sendFile(__dirname + "/public/frontpage.html")});
+</code></pre>
+            <p>
+                &ensp;If using ECMAScript then '__dirname' doesn't work. We need to import Node's path module instead,
+                and use its 'resolve' method which gives the absolute path and is independent of OS. 
+            </p>
+            <pre><code>
+import path from "path";
+.
+app.get("/", (req, res) => {
+    res.sendFile(path.resolve("./public/frontpage.html"));
+});                
 </code></pre>
             <div class="pageNavigation">
                 <a href="#section-0" class="pageNavigation">Return to top of page</a>
