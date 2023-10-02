@@ -107,7 +107,10 @@ dist
 .vscode
 
 # eslint
-.eslint
+.eslint*
 
 # VSCodeCounter
 .VSCodeCounter
+
+# nodemon
+nodemon*
