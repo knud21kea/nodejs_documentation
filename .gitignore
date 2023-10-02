@@ -114,4 +114,4 @@ dist
 .VSCodeCounter
 
 # nodemon
-nodemon.*
+nodemon.json
