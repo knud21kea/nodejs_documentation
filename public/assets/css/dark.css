@@ -12,16 +12,8 @@
     background-image: linear-gradient(to right, rgb(24, 24, 24), rgb(10, 10, 10));
 }
 
-.columnRight.dark {
-    background-color: rgb(30, 30, 30);
-}
-
-.columnRight.light {
-    background-color: rgb(200, 200, 200);
-}
-
 body {
-    background-color: rgb(0, 0, 0);
+    background-image: url("../images/pos.png");
 }
 
 main {
@@ -29,12 +21,12 @@ main {
 }
 
 nav {
-    background-image: linear-gradient(rgba(40, 32, 54, 0), rgba(40, 32, 54, 1), rgba(40, 32, 54, 0));
+    background-image: linear-gradient(rgba(80, 110, 130, 0.8), rgb(80, 110, 130, 1), rgba(80, 110, 130, 0.8));
 }
 
 footer {
     color: blanchedalmond;
-    background-image: repeating-linear-gradient(to right, rgba(40, 32, 54, 0), rgba(40, 32, 54, 1), rgba(40, 32, 54, 0));
+    background-image: repeating-linear-gradient(to right, rgba(80, 110, 130, 0), rgb(80, 110, 130, 1), rgba(80, 110, 130, 0));
 }
 
 h2 {
@@ -57,6 +49,10 @@ input {
 
 button {
     background-color: antiquewhite;
+}
+
+.icon:hover {
+    filter:saturate(100%)
 }
 
 .pageNavigation {

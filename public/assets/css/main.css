@@ -31,7 +31,7 @@ main {
 nav {
     border-radius: 2em;
     margin-bottom: 2vh;
-    min-height: 13vh;
+    min-height: 12vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -86,6 +86,7 @@ code {
     max-width: 4vw;
     height: auto;
     border-radius: 1em;
+    filter:saturate(5%);
 }
 
 .icon:hover {
@@ -102,7 +103,6 @@ code {
     margin: auto;
     width: 30vw;
     height: auto;
-    opacity: 75%;
 }
 
 .node {
