@@ -6,11 +6,10 @@ function readPage(pagePath) {
 
 function renderPage(page, config = { String }) {
   const navbar = fs.readFileSync('./public/components/navbar/navbar.html').toString()
-    .replace('$CSS_LINK', `<link rel="stylesheet" href="/assets/css/${config.theme}.css">`)
-    .replace('$TAB_NAME', config.tabTitle);
+    // .replace('$CSS_LINK', '<link rel="stylesheet" href="/assets/css/dark.css">' || '')
+    .replace('$TAB_NAME', config.tabTitle || 'NJS');
   const footer = fs.readFileSync('./public/components/footer/footer.html').toString()
     .replace('$FOOTER_YEAR', `${new Date().getFullYear()}`);
-
   return navbar + page + footer;
 }
 

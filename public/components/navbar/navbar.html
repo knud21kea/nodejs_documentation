@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/assets/js/modeSelector.js" defer></script>
     <link rel="stylesheet" href="/assets/css/main.css">
-    $CSS_LINK
+    <link id="colourTheme" rel="stylesheet" href="/assets/css/dark.css">
     <title>$TAB_NAME</title>
 </head>
 
@@ -14,7 +15,7 @@
 
     <header>
         <nav>
-            <a title="theme" href="/theme"><img src="/assets/images/theme_icon.png" class="icon"></a>
+            <a title="theme" onclick="javascript:switchMode()"><img src="/assets/images/theme_icon.png" class="icon"></a>
             <a title="home" href="/"><img src="/assets/images/home_icon.png" class="icon"></a>
             <a title="terminal" href="/terminal"><img src="/assets/images/terminal_icon.png" class="icon"></a>
             <a title="nodejs" href="/nodejs"><img src="/assets/images/nodejs_icon.png" class="icon"></a>

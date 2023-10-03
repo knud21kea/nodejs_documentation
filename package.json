@@ -4,7 +4,7 @@
     },
     "name": "s4_node_docs",
     "description": "KEA node.Js mandatory 1",
-    "version": "1.0.0",
+    "version": "1.1.12",
     "main": "app.js",
     "type": "module",
     "scripts": {
@@ -12,17 +12,17 @@
     },
     "repository": {
         "type": "git",
-        "url": "unknown"
+        "url": "https://github.com/knud21kea/nodejs_documentation"
     },
     "keywords": [
-        "node"
+        "node", "express", "javascript", "documentation", "education"
     ],
     "author": "Graham Heaven",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com"
+        "url": "https://github.com/knud21kea/nodejs_documentation/issues"
     },
-    "homepage": "https://github.com",
+    "homepage": "https://github.com/knud21kea/nodejs_documentation#readme",
     "devDependencies": {
         "eslint": "^8.50.0",
         "eslint-config-airbnb-base": "^15.0.0",
