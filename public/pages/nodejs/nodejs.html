@@ -14,6 +14,14 @@
                 <a href="#section-2" class="pageSection">Creating a server instance</a>
                 <br><br>
             </li>
+            <li>
+                <a href="#section-3" class="pageSection">Package managers</a>
+                <br><br>
+            </li>
+            <li>
+                <a href="#section-4" class="pageSection">Running scripts</a>
+                <br><br>
+            </li>
         </ul>
     </div>
 
@@ -38,18 +46,18 @@
                 To set up Node for a JavaScript project using Express:
             </h4>
             <p>
-                <ul>
-                    <li>
-                        Install Node,
-                    </li>
-                    <li>
-                        Navigate to the root directory of the project (see the page on terminal operations),
-                    </li>
-                    <li>
-                        Create a package.json file with a key "dependencies" taking a value object with
-                        key "express" and value "version".                        
-                    </li>
-                </ul>
+            <ul>
+                <li>
+                    Install Node,
+                </li>
+                <li>
+                    Navigate to the root directory of the project (see the page on terminal operations),
+                </li>
+                <li>
+                    Create a package.json file with a key "dependencies" taking a value object with
+                    key "express" and value "version".
+                </li>
+            </ul>
             </p>
             <pre><code>
 {
@@ -66,7 +74,8 @@
 </code></pre>
             <p>
                 &ensp;This creates and populates a node_modules folder in the project,
-                containing generated code for every installed dependency for your project. This folder should not be pushed to Git.
+                containing generated code for every installed dependency for your project. This folder should not be
+                pushed to Git.
                 A package-lock.json file is also created. This file ensures that the same dependencies,
                 with the same versions, are installed consistently across different environments.
             </p>
@@ -99,6 +108,89 @@ app.listen(8080, (error) => {
                 &ensp;There are no routes here but the server is running.
                 For more information on alternative import methods see the 'modules' page.
                 And for more on program design and structure see 'design'.
+            </p>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
+
+        <section class="subText" id="section-3">
+            <br>
+            <h4>
+                Package managers:
+            </h4>
+            <p>
+                &ensp;A package manager is a system that will manage your project dependencies.
+                It provides a method to install new dependencies, manage where packages are stored,
+                and offer capabilities for you to publish your own packages. Popular examples includ:
+            <ul>
+                <li>
+                    npm,
+                </li>
+                <li>
+                    yarn,
+                </li>
+                <li>
+                    pnpm
+                </li>
+                <li>
+                    pip,
+                </li>
+                <li>
+                    maven,
+                </li>
+                <li>
+                    gradle,
+                </li>
+                <li>
+                    ant,
+                </li>
+                <li>
+                    cargo.
+                </li>
+            </ul>
+            &ensp;The manager's structure can vary, here we compare Maven (Java) to Npm (Node):
+            </p>
+            <pre><code>
+maven       vs.      npm
+pom.xml              package.json
+meta info            meta info
+dependencies         dependencies
+life cycle methods   scripts
+</code></pre>
+            <div class="pageNavigation">
+                <a href="#section-0" class="pageNavigation">Return to top of page</a>
+            </div>
+        </section>
+
+        <section class="subText" id="section-4">
+            <br>
+            <h4>
+                Running scripts:
+            </h4>
+            <p>
+                &ensp;Anything that can be executed in the terminal can be run as a script in the scripts section of
+                package.json, so we can run scripts in npm, for example to enable the user to configure the app for
+                development or production. We add scripts and dependencies to package.json:
+            </p>
+            <pre><code>
+"scripts": {
+    "start:dev": "cross-env PORT=8080 nodemon app.js",
+    "start:prod": "cross-env PORT=3000 node app.js",
+    ...
+},
+...
+"devDependencies": {
+    "cross-env": "^7.0.3",
+...
+}
+</code></pre>
+            <p>
+                &ensp;We access environment variables (which are always strings) by installing a new dependency - 'cross-env'
+                (which is independent of operating system), and can now run the development version with nodemon by running:
+                <pre><code>
+npm run start:dev
+</code></pre>
             </p>
             <div class="pageNavigation">
                 <a href="#section-0" class="pageNavigation">Return to top of page</a>

@@ -5,8 +5,6 @@ const app = express();
 app.use(express.static('public'));
 app.use(urlencoded({ extended: true }));
 
-let loggedIn = false;
-
 // Pages --------------------------------------------------------------------------
 
 const frontpage = templateEngine.readPage('./public/pages/frontpage/frontpage.html');
@@ -87,16 +85,6 @@ app.get('/login', ((req, res) => {
   res.send(loginPage);
 }));
 
-const admin = templateEngine.readPage('./public/pages/admin/admin.html');
-const adminPage = templateEngine.renderPage(admin, { tabTitle: 'NJS: Admin' });
-app.get('/admin', ((req, res) => {
-  if (!loggedIn) {
-    res.redirect('/login');
-  } else {
-    res.send(adminPage);
-  }
-}));
-
 // API ---------------------------------------------------------------------------
 
 const user = {
@@ -104,15 +92,15 @@ const user = {
   password: '11111',
 };
 
+const admin = templateEngine.readPage('./public/pages/admin/admin.html');
+const adminPage = templateEngine.renderPage(admin, { tabTitle: 'NJS: Admin' });
 app.post('/api/login', ((req, res) => {
   const loginName = req.body.username;
   const loginPassword = req.body.password;
-  if (loginName === user.username && loginPassword === user.password) {
-    loggedIn = true;
-    res.redirect('/admin');
-  } else {
-    loggedIn = false;
+  if (loginName !== user.username || loginPassword !== user.password) {
     res.redirect('/login');
+  } else {
+    res.send(adminPage);
   }
 }));
 

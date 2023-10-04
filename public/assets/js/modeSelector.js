@@ -5,6 +5,7 @@ if (mode === 'light') {
   document.getElementById('colourTheme').href = '/assets/css/dark.css';
 }
 sessionStorage.setItem('mode', mode);
+sessionStorage.setItem('loggedIn', false);
 
 // eslint-disable-next-line no-unused-vars
 function switchMode() {

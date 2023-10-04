@@ -8,7 +8,9 @@
     "main": "app.js",
     "type": "module",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start:dev": "cross-env PORT=8080 nodemon app.js",
+        "start:prod": "cross-env PORT=3000 node app.js"
     },
     "repository": {
         "type": "git",
@@ -24,6 +26,7 @@
     },
     "homepage": "https://github.com/knud21kea/nodejs_documentation#readme",
     "devDependencies": {
+        "cross-env": "^7.0.3",
         "eslint": "^8.50.0",
         "eslint-config-airbnb-base": "^15.0.0",
         "eslint-plugin-import": "^2.28.1"
