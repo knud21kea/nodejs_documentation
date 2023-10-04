@@ -41,8 +41,12 @@
                 What is it?
             </h4>
             <p>
-                &ensp;XSS attacks are conducted by attackers who use vulnerable web applications to inject malicious
-                code.
+                &ensp;Cross-Site Scripting (XSS) is a common web security vulnerability that allows attackers to inject
+                malicious scripts into web applications viewed by other users. These scripts can execute within the
+                context
+                of the victim's browser, potentially stealing sensitive information, defacing websites, or performing
+                other
+                malicious actions.
             </p>
             <div class="pageNavigation">
                 <a href="#section-0" class="pageNavigation">Return to top of page</a>
@@ -55,8 +59,24 @@
                 How does it work?
             </h4>
             <p>
-                &ensp;The malicious code executes in the browser, the attacker steals cookies from account users
-                and gains access to sensitive and confidential information in the application.
+            <ol>
+                <li>
+                    Injection: An attacker injects malicious code (usually JavaScript) into a web application through
+                    user-provided input, like form fields or URL parameters. This input is improperly sanitized or not
+                    validated by the web application. This type of attack is very common.<br><br>
+                </li>
+                <li>
+                    Execution: When a victim visits the compromised web page, the malicious script is loaded and
+                    executed
+                    within their browser. The browser trusts the script because it appears to come from the trusted web
+                    application.<br><br>
+                </li>
+                <li>
+                    Actions: The malicious script can perform various actions on behalf of the victim, such as stealing
+                    their session cookies, sending their data to a remote server controlled by the attacker, or even
+                    redirecting them to a fake login page to capture their credentials.<br><br>
+                </li>
+            </ol>
             </p>
             <div class="pageNavigation">
                 <a href="#section-0" class="pageNavigation">Return to top of page</a>
@@ -69,23 +89,44 @@
                 How to combat an XSS attack?
             </h4>
             <p>
-                &ensp;There are basically two strategies, both of which need to be implemented.
+                &ensp;By following these best practices, the risk of XSS attacks can be reduced and the security of web
+                applications enhanced.
             </p>
             <p>
             <ul>
                 <li>
-                    Input validation is performed to make sure only secure data enters an information system
+                    Input Validation and Sanitization:<br>
+                    Ensure that all user input, including data from forms and URL parameters,
+                    is properly validated and sanitized before it's displayed or used within the web application. Use
+                    security libraries or frameworks to help with this process.<br><br>
                 </li>
                 <li>
-                    Output encoding translates untrusted input into a safe model, which can be done by sanitizing HTML.
-                    <ul>
-                        <li>
-                            Client-side sanitization: prevents unsafe content from the DOM level
-                        </li>
-                        <li>
-                            Server-side sanitization: prevents the storage of malicious HTML content in databases
-                        </li>
-                    </ul>
+                Content Security Policy (CSP):<br>
+                Implement a CSP header on your web server to restrict which sources of content (scripts, images, styles,
+                etc.) are allowed to be loaded by a page. This can help mitigate the impact of XSS attacks by blocking the
+                execution of inline scripts and other potentially harmful content.<br><br>
+                </li>
+                <li>
+                    Escape Output:<br>
+                    Encode user-generated content when displaying it in web pages. This means converting characters
+                    that have special meanings in HTML, such as &#60; and &#62;, into their HTML entities
+                    (e.g., &lt; and &gt;), so they are treated as plain text rather than executable code.<br><br>
+                </li>
+                <li>
+                    Use Security Headers:<br>
+                    Utilize security-related HTTP headers like HTTP Only and Secure flags for cookies, which help
+                    protect session data. Also, consider implementing X-Content-Type-Options and X-XSS-Protection headers
+                    to prevent content type sniffing and enable built-in XSS protection in modern browsers.<br><br>
+                </li>
+                <li>
+                    Regular Updates:<br>
+                    Keep your web application and its components (frameworks, libraries, plugins) up to date to
+                    patch known vulnerabilities that could be exploited by attackers.<br><br>
+                </li>
+                <li>
+                    Security Testing:<br>
+                    Conduct regular security assessments, including vulnerability scanning and penetration testing,
+                    to identify and remediate potential XSS vulnerabilities in your application.<br><br>
                 </li>
             </ul>
             </p>
