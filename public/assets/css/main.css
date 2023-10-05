@@ -86,7 +86,7 @@ code {
     max-width: 4vw;
     height: auto;
     border-radius: 1em;
-    filter:saturate(5%);
+    filter:saturate(20%);
 }
 
 .icon:hover {
